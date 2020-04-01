@@ -1,9 +1,12 @@
-import express from "express";
-
-const PORT = process.env.PORT || 5050;
-
-const app = express();
-
-app.listen(PORT, () => {
-  console.log(`listening on port ${PORT}`);
+#!/usr/bin/env node
+require("babel-polyfill");
+require("dotenv").config();
+require("@babel/register")({
+  presets: ["@babel/env"],
+  plugins: [
+    "@babel/plugin-proposal-optional-chaining",
+    "@babel/plugin-proposal-object-rest-spread"
+  ]
 });
+
+import "./app";
