@@ -1,0 +1,164 @@
+{
+  "aliases": {
+    "cohort_centric": {}
+  },
+  "settings": {
+    "index.number_of_shards": 3,
+    "index.max_results_window": 300000,
+    "analysis": {
+      "analyzer": {
+        "autocomplete_analyzed": {
+          "filter": [
+            "lowercase",
+            "edge_ngram"
+          ],
+          "tokenizer": "standard"
+        },
+        "autocomplete_prefix": {
+          "filter": [
+            "lowercase",
+            "edge_ngram"
+          ],
+          "tokenizer": "keyword"
+        },
+        "lowercase_keyword": {
+          "filter": [
+            "lowercase"
+          ],
+          "tokenizer": "keyword"
+        }
+      },
+      "filter": {
+        "edge_ngram": {
+          "max_gram": 20,
+          "min_gram": 20,
+          "side": "front",
+          "type": "edge_ngram"
+        }
+      }
+    }
+  },
+  "mappings": {
+    "dynamic": false,
+    "date_detection": false,
+    "properties": {
+      "cohort_attributes": {
+        "properties": {
+          "cohort_autocomplete": {
+            "fields": {
+              "analyzed": {
+                "analyzer": "autocomplete_prefix",
+                "search_analyzer": "lowercase_keyword",
+                "type": "text"
+              },
+              "lowercase": {
+                "analyzer": "autocomplete_prefix",
+                "type": "text"
+              },
+              "prefix": {
+                "analyzer": "autocomplete_prefix",
+                "search_analyzer": "lowercase_keyword",
+                "type": "text"
+              }
+            },
+            "type": "keyword"
+          },
+          "cohort_name": {
+            "type": "keyword",
+            "copy_to": [
+              "cohort_autocomplete"
+            ]
+          },
+          "aims_and_objectives": {
+            "type": "keyword"
+          },
+          "study_design": {
+            "type": "keyword"
+          },
+          "enrollment_criteria": {
+            "type": "keyword"
+          },
+          "number_of_participants": {
+            "type": "integer"
+          },
+          "countries": {
+            "type": "keyword",
+            "copy_to": [
+              "cohort_autocomplete"
+            ]
+          },
+          "timeline": {
+            "type": "keyword"
+          },
+          "pi_lead": {
+            "type": "keyword",
+            "copy_to": [
+              "cohort_autocomplete"
+            ]
+          },
+          "website": {
+            "type": "keyword"
+          },
+          "demographics": {
+            "properties": {
+              "sexes_studied": {
+                "type": "keyword"
+              },
+              "genders_studied": {
+                "type": "keyword"
+              },
+              "age_range": {
+                "type": "keyword"
+              }
+            }
+          }
+        }
+      },
+      "sample_types": {
+        "type": "keyword"
+      },
+      "laboratory_protocols": {
+        "properties": {
+          "microbiological_procedures": {
+            "type": "boolean"
+          },
+          "microbiological_collection_location": {
+            "type": "keyword"
+          }
+        }
+      },
+      "data_types": {
+        "type": "nested",
+        "properties": {
+          "data_type": {
+            "type": "keyword"
+          },
+          "sample_size": {
+            "type": "integer"
+          },
+          "available_data_formats": {
+            "type": "keyword"
+          },
+          "availability": {
+            "type": "keyword"
+          },
+          "processing_methods": {
+            "type": "keyword"
+          },
+          "tissue_or_biosample_type": {
+            "type": "keyword"
+          },
+          "associated_phenotypes": {
+            "type": "keyword"
+          },
+          "associated_disease": {
+            "type": "keyword"
+          },
+          "associated_medications": {
+            "type": "keyword"
+          }
+        }
+      }
+    }
+  }
+}
