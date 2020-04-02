@@ -6,3 +6,6 @@ dev-ui:
 
 dev-api:
 	cd ./api && npm run dev
+
+start-api:
+	cd ./api && npm run start
