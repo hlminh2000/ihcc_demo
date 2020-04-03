@@ -52,6 +52,21 @@ const PageContent = ({ style, ...props }: { style: {} }) => {
       }
     }
   `;
+  const searchResultSection = css`
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    & .tableToolbar {
+      & .inputWrapper {
+        display: none !important;
+      }
+      & .group {
+        height: 32px;
+      }
+    }
+  `;
   return (
     <div className={pageContainer}>
       <div className={facetPanelContainer}>
@@ -65,15 +80,7 @@ const PageContent = ({ style, ...props }: { style: {} }) => {
           {...props}
         />
       </div>
-      <div
-        className={css`
-          position: relative;
-          flex-grow: 1;
-          display: flex;
-          flex-direction: column;
-          padding: 10px;
-        `}
-      >
+      <div className={searchResultSection}>
         <CurrentSQON {...props} />
         <Table {...props} />
       </div>
@@ -84,7 +91,7 @@ const PageContent = ({ style, ...props }: { style: {} }) => {
 const CohortRepo = () => {
   const index = "cohort_centric";
   const graphqlField = "cohort";
-  const projectId = "demo_3";
+  const projectId = "demo_4";
   return (
     <Arranger
       disableSocket
