@@ -8,23 +8,15 @@
     "analysis": {
       "analyzer": {
         "autocomplete_analyzed": {
-          "filter": [
-            "lowercase",
-            "edge_ngram"
-          ],
+          "filter": ["lowercase", "edge_ngram"],
           "tokenizer": "standard"
         },
         "autocomplete_prefix": {
-          "filter": [
-            "lowercase",
-            "edge_ngram"
-          ],
+          "filter": ["lowercase", "edge_ngram"],
           "tokenizer": "keyword"
         },
         "lowercase_keyword": {
-          "filter": [
-            "lowercase"
-          ],
+          "filter": ["lowercase"],
           "tokenizer": "keyword"
         }
       },
@@ -42,33 +34,42 @@
     "dynamic": false,
     "date_detection": false,
     "properties": {
+      "cohort_autocomplete": {
+        "fields": {
+          "analyzed": {
+            "analyzer": "autocomplete_prefix",
+            "search_analyzer": "lowercase_keyword",
+            "type": "text"
+          },
+          "lowercase": {
+            "analyzer": "autocomplete_prefix",
+            "type": "text"
+          },
+          "prefix": {
+            "analyzer": "autocomplete_prefix",
+            "search_analyzer": "lowercase_keyword",
+            "type": "text"
+          }
+        },
+        "type": "keyword"
+      },
+      "cohort_name": {
+        "type": "keyword",
+        "copy_to": ["cohort_autocomplete"]
+      },
+      "countries": {
+        "type": "keyword",
+        "copy_to": ["cohort_autocomplete"]
+      },
+      "pi_lead": {
+        "type": "keyword",
+        "copy_to": ["cohort_autocomplete"]
+      },
+      "website": {
+        "type": "keyword"
+      },
       "cohort_attributes": {
         "properties": {
-          "cohort_autocomplete": {
-            "fields": {
-              "analyzed": {
-                "analyzer": "autocomplete_prefix",
-                "search_analyzer": "lowercase_keyword",
-                "type": "text"
-              },
-              "lowercase": {
-                "analyzer": "autocomplete_prefix",
-                "type": "text"
-              },
-              "prefix": {
-                "analyzer": "autocomplete_prefix",
-                "search_analyzer": "lowercase_keyword",
-                "type": "text"
-              }
-            },
-            "type": "keyword"
-          },
-          "cohort_name": {
-            "type": "keyword",
-            "copy_to": [
-              "cohort_autocomplete"
-            ]
-          },
           "aims_and_objectives": {
             "type": "keyword"
           },
@@ -81,80 +82,33 @@
           "number_of_participants": {
             "type": "integer"
           },
-          "countries": {
-            "type": "keyword",
-            "copy_to": [
-              "cohort_autocomplete"
-            ]
-          },
           "timeline": {
             "type": "keyword"
           },
-          "pi_lead": {
-            "type": "keyword",
-            "copy_to": [
-              "cohort_autocomplete"
-            ]
-          },
-          "website": {
+          "demographic_variables": {
             "type": "keyword"
           },
-          "demographics": {
-            "properties": {
-              "sexes_studied": {
-                "type": "keyword"
-              },
-              "genders_studied": {
-                "type": "keyword"
-              },
-              "age_range": {
-                "type": "keyword"
-              }
-            }
-          }
-        }
-      },
-      "sample_types": {
-        "type": "keyword"
-      },
-      "laboratory_protocols": {
-        "properties": {
-          "microbiological_procedures": {
-            "type": "boolean"
-          },
-          "microbiological_collection_location": {
+          "population_variables": {
             "type": "keyword"
           }
         }
       },
-      "data_types": {
-        "type": "nested",
+      "biosample": {
         "properties": {
-          "data_type": {
+          "biosample_types": {
             "type": "keyword"
           },
-          "sample_size": {
-            "type": "integer"
-          },
-          "available_data_formats": {
+          "biosample_variables": {
+            "type": "keyword"
+          }
+        }
+      },
+      "laboratory": {
+        "properties": {
+          "genomic_variables": {
             "type": "keyword"
           },
-          "availability": {
-            "type": "keyword"
-          },
-          "processing_methods": {
-            "type": "keyword"
-          },
-          "tissue_or_biosample_type": {
-            "type": "keyword"
-          },
-          "associated_phenotypes": {
-            "type": "keyword"
-          },
-          "associated_disease": {
-            "type": "keyword"
-          },
-          "associated_medications": {
+          "microbiological_variables": {
             "type": "keyword"
           }
         }
