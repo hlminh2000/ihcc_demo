@@ -9,3 +9,6 @@ dev-api:
 
 start-api:
 	cd ./api && npm run start
+
+prod-restart:
+	pm2 restart ts-node && cd ./ui && npm run build && sudo rm -rf /var/www/html/portal && sudo cp -r build /var/www/html/portal
