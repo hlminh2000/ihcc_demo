@@ -14,8 +14,7 @@ prod-restart:
 	cd ./ui \
 	&& npm ci \
 	&& npm run build \
-	&& sudo rm -rf /var/www/html/portal \
-	&& sudo cp -r build /var/www/html/portal \
+	&& sudo cp -r build ../api/public \
 	&& cd ../api \
 	&& npm ci \
-	&& pm2 restart ts-node
+	&& npx pm2 restart --update-env ts-node
