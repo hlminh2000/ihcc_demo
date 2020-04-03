@@ -1,4 +1,5 @@
 import express from "express";
+import morgan from "morgan";
 
 //@ts-ignore
 import arranger from "@arranger/server";
@@ -8,9 +9,9 @@ import adminGraphql from "@arranger/admin/dist";
 const PORT = process.env.PORT || 6060;
 const ES_HOST = process.env.ES_HOST || "http://localhost:9200";
 
-const app = express();
-
 (async () => {
+  const app = express();
+  app.use(morgan("combined"));
   const adminApolloServer = await adminGraphql({
     esHost: ES_HOST
   });
