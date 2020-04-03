@@ -21,6 +21,7 @@ const PageContent = ({ style, ...props }: { style: {} }) => {
     height: 100%;
   `;
   const facetPanelContainer = css`
+    width: 300px;
     max-height: calc(100vh - 64px);
     border-right: solid 1px #dcdde1;
     overflow: scroll;
@@ -71,7 +72,7 @@ const PageContent = ({ style, ...props }: { style: {} }) => {
     <div className={pageContainer}>
       <div className={facetPanelContainer}>
         <Aggregations
-          style={{ width: 300 }}
+          style={{ width: "100%" }}
           componentProps={{
             getTermAggProps: () => ({
               maxTerms: 3
