@@ -159,7 +159,7 @@ const PageContent = ({ style, ...props }: { style: {} }) => {
 const CohortRepo = () => {
   const index = "cohort_centric";
   const graphqlField = "cohort";
-  const projectId = "demo_1";
+  const projectId = "demo_2";
   return (
     <Arranger
       disableSocket
