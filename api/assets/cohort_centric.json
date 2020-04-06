@@ -4,19 +4,27 @@
   },
   "settings": {
     "index.number_of_shards": 3,
-    "index.max_results_window": 300000,
+    "index.max_result_window": 300000,
     "analysis": {
       "analyzer": {
         "autocomplete_analyzed": {
-          "filter": ["lowercase", "edge_ngram"],
+          "filter": [
+            "lowercase",
+            "edge_ngram"
+          ],
           "tokenizer": "standard"
         },
         "autocomplete_prefix": {
-          "filter": ["lowercase", "edge_ngram"],
+          "filter": [
+            "lowercase",
+            "edge_ngram"
+          ],
           "tokenizer": "keyword"
         },
         "lowercase_keyword": {
-          "filter": ["lowercase"],
+          "filter": [
+            "lowercase"
+          ],
           "tokenizer": "keyword"
         }
       },
@@ -55,15 +63,21 @@
       },
       "cohort_name": {
         "type": "keyword",
-        "copy_to": ["cohort_autocomplete"]
+        "copy_to": [
+          "cohort_autocomplete"
+        ]
       },
       "countries": {
         "type": "keyword",
-        "copy_to": ["cohort_autocomplete"]
+        "copy_to": [
+          "cohort_autocomplete"
+        ]
       },
       "pi_lead": {
         "type": "keyword",
-        "copy_to": ["cohort_autocomplete"]
+        "copy_to": [
+          "cohort_autocomplete"
+        ]
       },
       "website": {
         "type": "keyword"
