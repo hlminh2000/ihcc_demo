@@ -27,6 +27,7 @@ const facetPanelContainer = (collapsed: boolean) => css`
   flex-direction: column;
   justify-content: space-between;
   box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.1);
+  min-height: 100%;
 `;
 const body = css`
   display: flex;
@@ -39,6 +40,7 @@ const bodyContent = css`
   flex-direction: column;
   flex: 1;
   padding: 18px;
+  padding-bottom: 0px;
   & .sqon-view {
     & .sqon-bubble.sqon-value {
       background-color: #1e6e6d;
@@ -71,6 +73,7 @@ const bodyContent = css`
   }
   & .ReactTable {
     border: none;
+    height: calc(100vh - 250px);
     & .rt-table {
       border: solid 1px lightgrey;
       & .rt-thead {
