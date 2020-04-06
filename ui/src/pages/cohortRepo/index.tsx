@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { css } from "emotion";
 import GGMC_logo from "./GGMC_logo.png";
 import chevron from "./chevron-right.svg";
-
+import websiteIcon from "./website.svg";
 import {
   Arranger,
   Aggregations,
@@ -38,8 +38,30 @@ const bodyContent = css`
   display: flex;
   flex-direction: column;
   flex: 1;
-  padding: 10px;
+  padding: 18px;
+  & .sqon-view {
+    & .sqon-bubble.sqon-value {
+      background-color: #1e6e6d;
+    }
+    & .sqon-bubble.sqon-clear {
+      color: #191970;
+    }
+  }
+
   & .tableToolbar {
+    padding: 8px 0px;
+    font-size: 12px;
+    & .group {
+      & .dropDownHeader {
+        display: none;
+      }
+      & .buttonWrapper {
+        /* the Export TSV button */
+        border-radius: 10px;
+        border: solid 1px #b2b7c1;
+        height: 27px;
+      }
+    }
     & .inputWrapper {
       display: none !important;
     }
@@ -175,6 +197,23 @@ const collapseButtonStyle = (collapsed: boolean) => css`
   transition: all 0.5s;
 `;
 
+const TableWebsiteCell = ({ original }: { original: { website: string } }) => {
+  const icon = css`
+    width: 15px;
+  `;
+  const link = css`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  `;
+  return (
+    <a className={link} href={original.website} target="_blank">
+      <img className={icon} src={websiteIcon}></img>
+    </a>
+  );
+};
+
 const PageContent = ({ style, ...props }: { style: {} }) => {
   const [facetPanelCollapsed, setFacetPanelCollapsed] = React.useState(false);
   const onFacetCollapserClick = () => {
@@ -209,7 +248,20 @@ const PageContent = ({ style, ...props }: { style: {} }) => {
       <div className={body}>
         <div className={bodyContent}>
           <CurrentSQON {...props} />
-          <Table {...props} />
+          <Table
+            {...props}
+            customColumns={[
+              {
+                index: 9999,
+                content: {
+                  accessor: "website",
+                  Header: "Website",
+                  Cell: TableWebsiteCell,
+                  width: 70
+                }
+              }
+            ]}
+          />
         </div>
         <div className={`${footerStyle} ${bodyFooter}`}>
           <div className={footerSponsor}>
@@ -234,7 +286,7 @@ const PageContent = ({ style, ...props }: { style: {} }) => {
 const CohortRepo = () => {
   const index = "cohort_centric";
   const graphqlField = "cohort";
-  const projectId = "demo_3";
+  const projectId = "demo_6";
   return (
     <Arranger
       disableSocket
