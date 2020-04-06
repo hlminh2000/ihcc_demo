@@ -247,10 +247,4 @@ const CohortRepo = () => {
   );
 };
 
-require("react-dom");
-// @ts-ignore
-window.React2 = require("react");
-// @ts-ignore
-console.log(window.React1 === window.React2);
-
 export default CohortRepo;
