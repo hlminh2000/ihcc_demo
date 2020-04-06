@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { css } from "emotion";
 import GGMC_logo from "./GGMC_logo.png";
+import chevron from "./chevron-right.svg";
 
 import {
   Arranger,
@@ -17,8 +18,9 @@ const pageContainer = css`
   max-height: 100%;
   height: 100%;
 `;
-const facetPanelContainer = css`
-  width: 250px;
+const facetPanelContainer = (collapsed: boolean) => css`
+  width: ${collapsed ? `50px` : `250px`};
+  transition: all 0.25s;
   max-height: calc(100vh - 64px);
   border-right: solid 1px #dcdde1;
   display: flex;
@@ -45,12 +47,51 @@ const bodyContent = css`
       height: 32px;
     }
   }
+  & .ReactTable {
+    border: none;
+    & .rt-table {
+      border: solid 1px lightgrey;
+      & .rt-thead {
+        background: white;
+        & .rt-tr .rt-th {
+          & .rt-resizable-header-content {
+            color: #202020;
+          }
+          &.-sort-asc {
+            box-shadow: inset 0 3px 0 0 #748ea6;
+          }
+          &.-sort-desc {
+            box-shadow: inset 0 -3px 0 0 #748ea6;
+          }
+          padding-top: 8px;
+          padding-bottom: 8px;
+        }
+      }
+    }
+    & .pagination-bottom {
+      & .-pagination {
+        height: 45px;
+        box-shadow: none;
+        border: none;
+      }
+    }
+  }
 `;
-const facetScroller = css`
+const facetScroller = (collapsed: boolean) => css`
   overflow: scroll;
   display: flex;
+  ${collapsed
+    ? css`
+        & > * {
+          display: none;
+        }
+      `
+    : ""}
   .aggregation-card {
     border-top: none;
+    border-left: none;
+    padding: 0px;
+    margin: 0px;
     &:last-child {
       border-bottom: none;
     }
@@ -60,6 +101,10 @@ const facetScroller = css`
         padding: 10px;
         padding: 10px;
         background-color: #e8e8f0;
+        color: #202020;
+        & .title {
+          color: #202020;
+        }
         &.collapsed {
           padding-bottom: 10px;
           & > .arrow {
@@ -68,9 +113,15 @@ const facetScroller = css`
         }
       }
     }
-    border-left: none;
-    padding: 0px;
-    margin: 0px;
+    & .showMore-wrapper {
+      & ::before {
+        color: #47a8bd;
+      }
+      color: #202020;
+      margin-top: 0px;
+      padding-left: 8px;
+      justify-content: flex-start;
+    }
     .filter {
       padding-left: 5px;
       padding-right: 5px;
@@ -91,7 +142,7 @@ const footerStyle = css`
 `;
 const facetPanelFooter = css`
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 `;
 const bodyFooter = css`
@@ -107,18 +158,36 @@ const footerSponsor = css`
 `;
 const footerLink = css`
   margin: 10px;
+  color: #47478d;
 `;
 const sponsorLogo = css`
   width: 180px;
 `;
+const chevronLeft = css`
+  width: 10px;
+  margin-left: -5px;
+`;
+
+const collapseButtonStyle = (collapsed: boolean) => css`
+  border: none;
+  cursor: pointer;
+  transform: rotate(${collapsed ? "0deg" : "180deg"});
+  transition: all 0.5s;
+`;
 
 const PageContent = ({ style, ...props }: { style: {} }) => {
+  const [facetPanelcollapsed, setFacetPanelCollapsed] = React.useState(false);
+  const onFacetCollapserClick = () => {
+    setFacetPanelCollapsed(!facetPanelcollapsed);
+  };
   return (
     <div className={pageContainer}>
-      <div className={facetPanelContainer}>
-        <div className={facetScroller}>
+      <div className={facetPanelContainer(facetPanelcollapsed)}>
+        <div className={facetScroller(facetPanelcollapsed)}>
           <Aggregations
-            style={{ width: "100%" }}
+            style={{
+              width: "100%"
+            }}
             componentProps={{
               getTermAggProps: () => ({
                 maxTerms: 3
@@ -128,7 +197,13 @@ const PageContent = ({ style, ...props }: { style: {} }) => {
           />
         </div>
         <div className={`${footerStyle} ${facetPanelFooter}`}>
-          <div>{"<<"}</div>
+          <div
+            className={collapseButtonStyle(facetPanelcollapsed)}
+            onClick={onFacetCollapserClick}
+          >
+            <img src={chevron} className={chevronLeft}></img>
+            <img src={chevron} className={chevronLeft}></img>
+          </div>
         </div>
       </div>
       <div className={body}>
@@ -161,14 +236,21 @@ const CohortRepo = () => {
   const graphqlField = "cohort";
   const projectId = "demo_2";
   return (
+    // <div>hello</div>
     <Arranger
       disableSocket
       index={index}
       graphqlField={graphqlField}
       projectId={projectId}
-      render={PageContent}
+      render={(props: any) => <PageContent {...props} />}
     />
   );
 };
+
+require("react-dom");
+// @ts-ignore
+window.React2 = require("react");
+// @ts-ignore
+console.log(window.React1 === window.React2);
 
 export default CohortRepo;
