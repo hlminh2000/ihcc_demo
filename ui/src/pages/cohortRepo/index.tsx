@@ -49,7 +49,8 @@ const bodyContent = css`
       color: #191970;
     }
   }
-
+`;
+const tableContainer = css`
   & .tableToolbar {
     padding: 8px 0px;
     font-size: 12px;
@@ -95,6 +96,7 @@ const bodyContent = css`
     }
     & .pagination-bottom {
       & .-pagination {
+        padding: 0px;
         height: 45px;
         box-shadow: none;
         border: none;
@@ -251,20 +253,22 @@ const PageContent = ({ style, ...props }: { style: {} }) => {
       <div className={body}>
         <div className={bodyContent}>
           <CurrentSQON {...props} />
-          <Table
-            {...props}
-            customColumns={[
-              {
-                index: 9999,
-                content: {
-                  accessor: "website",
-                  Header: "Website",
-                  Cell: TableWebsiteCell,
-                  width: 70
+          <div className={tableContainer}>
+            <Table
+              {...props}
+              customColumns={[
+                {
+                  index: 9999,
+                  content: {
+                    accessor: "website",
+                    Header: "Website",
+                    Cell: TableWebsiteCell,
+                    width: 70
+                  }
                 }
-              }
-            ]}
-          />
+              ]}
+            />
+          </div>
         </div>
         <div className={`${footerStyle} ${bodyFooter}`}>
           <div className={footerSponsor}>
