@@ -234,9 +234,8 @@ const PageContent = ({ style, ...props }: { style: {} }) => {
 const CohortRepo = () => {
   const index = "cohort_centric";
   const graphqlField = "cohort";
-  const projectId = "demo_2";
+  const projectId = "demo_3";
   return (
-    // <div>hello</div>
     <Arranger
       disableSocket
       index={index}
