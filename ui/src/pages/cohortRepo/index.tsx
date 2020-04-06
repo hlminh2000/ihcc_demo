@@ -176,14 +176,14 @@ const collapseButtonStyle = (collapsed: boolean) => css`
 `;
 
 const PageContent = ({ style, ...props }: { style: {} }) => {
-  const [facetPanelcollapsed, setFacetPanelCollapsed] = React.useState(false);
+  const [facetPanelCollapsed, setFacetPanelCollapsed] = React.useState(false);
   const onFacetCollapserClick = () => {
-    setFacetPanelCollapsed(!facetPanelcollapsed);
+    setFacetPanelCollapsed(!facetPanelCollapsed);
   };
   return (
     <div className={pageContainer}>
-      <div className={facetPanelContainer(facetPanelcollapsed)}>
-        <div className={facetScroller(facetPanelcollapsed)}>
+      <div className={facetPanelContainer(facetPanelCollapsed)}>
+        <div className={facetScroller(facetPanelCollapsed)}>
           <Aggregations
             style={{
               width: "100%"
@@ -198,7 +198,7 @@ const PageContent = ({ style, ...props }: { style: {} }) => {
         </div>
         <div className={`${footerStyle} ${facetPanelFooter}`}>
           <div
-            className={collapseButtonStyle(facetPanelcollapsed)}
+            className={collapseButtonStyle(facetPanelCollapsed)}
             onClick={onFacetCollapserClick}
           >
             <img src={chevron} className={chevronLeft}></img>
