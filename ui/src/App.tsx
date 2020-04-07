@@ -5,6 +5,9 @@ import CohortRepo from "./pages/cohortRepo";
 import logo from "./logo.png";
 import { css } from "emotion";
 
+import ApolloClient from "apollo-boost";
+import { ApolloProvider } from "@apollo/react-hooks";
+
 function App() {
   const customHistory = createBrowserHistory();
   const fullView = css`
@@ -35,22 +38,29 @@ function App() {
     position: relative;
     flex: 1;
   `;
+
+  const client = new ApolloClient({
+    uri: `${process.env.REACT_APP_ARRANGER_API}/demo_6/graphql`
+  });
+
   return (
-    <div className={fullView}>
-      <div className={headerStyle}>
-        <img src={logo} className={logoStyle}></img>
-        International HundredK+ Cohorts Consortium
+    <ApolloProvider client={client}>
+      <div className={fullView}>
+        <div className={headerStyle}>
+          <img src={logo} className={logoStyle}></img>
+          International HundredK+ Cohorts Consortium
+        </div>
+        <div className={pageContainer}>
+          <Router history={customHistory}>
+            <Switch>
+              <Route exact path="/">
+                <CohortRepo />
+              </Route>
+            </Switch>
+          </Router>
+        </div>
       </div>
-      <div className={pageContainer}>
-        <Router history={customHistory}>
-          <Switch>
-            <Route exact path="/">
-              <CohortRepo />
-            </Route>
-          </Switch>
-        </Router>
-      </div>
-    </div>
+    </ApolloProvider>
   );
 }
 

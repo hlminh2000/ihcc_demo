@@ -4,6 +4,7 @@ import GGMC_logo from "./GGMC_logo.png";
 import chevron from "./chevron-right.svg";
 import websiteIcon from "./website.svg";
 import arrow from "./arrow-right@2x.png";
+import Charts from "./charts";
 
 import {
   Arranger,
@@ -244,6 +245,8 @@ const PageContent = (props: { sqon: SQON | null }) => {
     setFacetPanelCollapsed(!facetPanelCollapsed);
   };
 
+  console.log("sqon: ", props.sqon);
+
   return (
     <div className={pageContainer}>
       <div className={facetPanelContainer(facetPanelCollapsed)}>
@@ -280,6 +283,7 @@ const PageContent = (props: { sqon: SQON | null }) => {
           ) : (
             <CurrentSQON {...props} />
           )}
+          <Charts></Charts>
           <div className={tableContainer}>
             <Table
               {...props}
