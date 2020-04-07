@@ -3,6 +3,8 @@ import { css } from "emotion";
 import GGMC_logo from "./GGMC_logo.png";
 import chevron from "./chevron-right.svg";
 import websiteIcon from "./website.svg";
+import arrow from "./arrow-right@2x.png";
+
 import {
   Arranger,
   Aggregations,
@@ -74,7 +76,7 @@ const tableContainer = css`
   }
   & .ReactTable {
     border: none;
-    height: calc(100vh - 200px);
+    height: calc(100vh - 240px);
     & .rt-table {
       border: solid 1px lightgrey;
       & .rt-thead {
@@ -195,6 +197,21 @@ const chevronLeft = css`
   margin-left: -5px;
 `;
 
+const emptySqonContainer = css`
+  padding: 0px;
+  height: 52px;
+  font-size: 14px;
+  padding-left: 19px;
+  display: flex;
+  align-items: center;
+`;
+
+const emptySqonArrowStyle = css`
+  width: 12px;
+  transform: rotate(180deg);
+  margin-right: 5px;
+`;
+
 const collapseButtonStyle = (collapsed: boolean) => css`
   border: none;
   cursor: pointer;
@@ -219,11 +236,14 @@ const TableWebsiteCell = ({ original }: { original: { website: string } }) => {
   );
 };
 
-const PageContent = ({ style, ...props }: { style: {} }) => {
+type SQON = {};
+
+const PageContent = (props: { sqon: SQON | null }) => {
   const [facetPanelCollapsed, setFacetPanelCollapsed] = React.useState(false);
   const onFacetCollapserClick = () => {
     setFacetPanelCollapsed(!facetPanelCollapsed);
   };
+
   return (
     <div className={pageContainer}>
       <div className={facetPanelContainer(facetPanelCollapsed)}>
@@ -252,7 +272,14 @@ const PageContent = ({ style, ...props }: { style: {} }) => {
       </div>
       <div className={body}>
         <div className={bodyContent}>
-          <CurrentSQON {...props} />
+          {!props.sqon ? (
+            <div className={`sqon-view ${emptySqonContainer}`}>
+              <img src={arrow} className={emptySqonArrowStyle}></img>
+              Use the filter panel on the left to customize your cohort search.
+            </div>
+          ) : (
+            <CurrentSQON {...props} />
+          )}
           <div className={tableContainer}>
             <Table
               {...props}
