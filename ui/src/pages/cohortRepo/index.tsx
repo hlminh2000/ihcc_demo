@@ -76,7 +76,7 @@ const tableContainer = css`
   }
   & .ReactTable {
     border: none;
-    height: calc(100vh - 240px);
+    max-height: calc(100vh - 240px);
     & .rt-table {
       border: solid 1px lightgrey;
       & .rt-thead {
