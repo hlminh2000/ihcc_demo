@@ -45,9 +45,9 @@ export default ({ sqon }: { sqon: {} | null }) => {
     };
   }>(
     gql`
-      query BIOSAMPLE_AGGREGATION {
+      query BIOSAMPLE_AGGREGATION($sqon: JSON) {
         cohort {
-          aggregations {
+          aggregations(aggregations_filter_themselves: true, filters: $sqon) {
             biosample__biosample_types {
               buckets {
                 key
