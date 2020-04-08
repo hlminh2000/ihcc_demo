@@ -250,6 +250,36 @@ const PageContent = (props: { sqon: SQON | null }) => {
     setFacetPanelCollapsed(!facetPanelCollapsed);
   };
 
+  const customTableColumns = [
+    {
+      index: 1,
+      content: {
+        accessor: "countries",
+        Header: "Countries",
+        Cell: ({ original }: any) => <>{original.countries.join(", ")}</>
+      }
+    },
+    {
+      index: 1,
+      content: {
+        accessor: "cohort_attributes.enrollment_criteria",
+        Header: "Enrollment Criteria",
+        Cell: ({ original }: any) => (
+          <>{original.cohort_attributes.enrollment_criteria.join(", ")}</>
+        )
+      }
+    },
+    {
+      index: 9999,
+      content: {
+        accessor: "website",
+        Header: "Website",
+        Cell: TableWebsiteCell,
+        width: 70
+      }
+    }
+  ];
+
   return (
     <div className={pageContainer}>
       <div className={facetPanelContainer(facetPanelCollapsed)}>
@@ -288,20 +318,7 @@ const PageContent = (props: { sqon: SQON | null }) => {
           )}
           <Charts sqon={props.sqon}></Charts>
           <div className={tableContainer}>
-            <Table
-              {...props}
-              customColumns={[
-                {
-                  index: 9999,
-                  content: {
-                    accessor: "website",
-                    Header: "Website",
-                    Cell: TableWebsiteCell,
-                    width: 70
-                  }
-                }
-              ]}
-            />
+            <Table {...props} customColumns={customTableColumns} />
           </div>
         </div>
         <div className={`${footerStyle} ${bodyFooter}`}>
@@ -327,7 +344,7 @@ const PageContent = (props: { sqon: SQON | null }) => {
 const CohortRepo = () => {
   const index = "cohort_centric";
   const graphqlField = "cohort";
-  const projectId = "demo_6";
+  const projectId = "demo_7";
   return (
     <Arranger
       disableSocket
