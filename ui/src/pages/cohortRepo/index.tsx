@@ -245,8 +245,6 @@ const PageContent = (props: { sqon: SQON | null }) => {
     setFacetPanelCollapsed(!facetPanelCollapsed);
   };
 
-  console.log("sqon: ", props.sqon);
-
   return (
     <div className={pageContainer}>
       <div className={facetPanelContainer(facetPanelCollapsed)}>
