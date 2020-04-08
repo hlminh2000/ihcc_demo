@@ -1,8 +1,7 @@
 import React from "react";
 import { css } from "emotion";
 import BarChart from "./BarChart";
-import DiseaseTypeChart from "./DiseaseTypeChart";
-import AnalysisDataTypeChart from "./AnalysisDataTypeChart";
+import BioSampleChart from "./BioSampleChart";
 
 import { Row, Col } from "react-grid-system";
 
@@ -25,26 +24,20 @@ const chartTitleStyle = css`
   color: #202020;
 `;
 
-export default ({ sqon }: { sqon?: {} }) => {
+export default ({ sqon }: { sqon: {} | null }) => {
   return (
     <div className={container}>
       <Row className="row" style={{ width: "100%" }}>
-        <Col lg={6}>
+        <Col lg={9}>
           <div className={`${chartContainer}`}>
-            <div className={chartTitleStyle}>Participants by Country</div>
-            <BarChart sqon={null} />
+            <div className={chartTitleStyle}>Cohorts by Country</div>
+            <BarChart sqon={sqon} />
           </div>
         </Col>
         <Col lg={3}>
           <div className={`${chartContainer}`}>
-            <div className={chartTitleStyle}>Disease Types</div>
-            <DiseaseTypeChart sqon={null} />
-          </div>
-        </Col>
-        <Col lg={3}>
-          <div className={`${chartContainer}`}>
-            <div className={chartTitleStyle}>Analysis Data Types</div>
-            <AnalysisDataTypeChart sqon={null} />
+            <div className={chartTitleStyle}>Biosample Types</div>
+            <BioSampleChart sqon={sqon} />
           </div>
         </Col>
       </Row>

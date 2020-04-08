@@ -4,45 +4,61 @@ import { ResponsivePie } from "@nivo/pie";
 import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
 
-type ChartData = { country: string; participants: number }[];
-
-const data = [
-  {
-    id: "stylus",
-    label: "stylus",
-    value: 209,
-    color: "hsl(322, 70%, 50%)"
-  },
-  {
-    id: "hack",
-    label: "hack",
-    value: 378,
-    color: "hsl(332, 70%, 50%)"
-  },
-  {
-    id: "c",
-    label: "c",
-    value: 465,
-    color: "hsl(69, 70%, 50%)"
-  },
-  {
-    id: "scala",
-    label: "scala",
-    value: 596,
-    color: "hsl(127, 70%, 50%)"
-  },
-  {
-    id: "lisp",
-    label: "lisp",
-    value: 298,
-    color: "hsl(335, 70%, 50%)"
-  }
-];
+type ChartData = {
+  id: string;
+  label: string;
+  value: number;
+}[];
 
 export default ({ sqon }: { sqon: {} | null }) => {
+  const { data: bioSampleQueryData } = useQuery<{
+    cohort: {
+      aggregations: {
+        biosample__biosample_types: {
+          buckets: {
+            key: string;
+            doc_count: number;
+          }[];
+        };
+      };
+    };
+  }>(
+    gql`
+      query BIOSAMPLE_AGGREGATION {
+        cohort {
+          aggregations {
+            biosample__biosample_types {
+              buckets {
+                key
+                doc_count
+              }
+            }
+          }
+        }
+      }
+    `,
+    {
+      variables: {
+        sqon: sqon
+      },
+      fetchPolicy: "network-only"
+    }
+  );
+
+  const chartData: ChartData =
+    bioSampleQueryData?.cohort.aggregations.biosample__biosample_types.buckets.map(
+      ({ doc_count, key }) => ({
+        id: key,
+        label: key,
+        value: doc_count
+      })
+    ) || [];
+
+  console.log("chartData: ", chartData);
+
   return (
     <ResponsivePie
-      data={data}
+      data={chartData}
       margin={{ top: 10, right: 0, bottom: 30, left: 0 }}
       innerRadius={0.5}
       padAngle={0.7}

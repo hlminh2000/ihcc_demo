@@ -283,7 +283,7 @@ const PageContent = (props: { sqon: SQON | null }) => {
           ) : (
             <CurrentSQON {...props} />
           )}
-          <Charts></Charts>
+          <Charts sqon={props.sqon}></Charts>
           <div className={tableContainer}>
             <Table
               {...props}

@@ -4,25 +4,26 @@ import { ResponsiveBar } from "@nivo/bar";
 import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
 
-type ChartData = { country: string; participants: number }[];
+type ChartData = { country: string; cohorts: number }[];
 
 export default ({ sqon }: { sqon: {} | null }) => {
-  const { data: countriesQueryData, loading: loadingCountries } = useQuery<{
+  const { data, loading: loadingCountries } = useQuery<{
     cohort: {
       aggregations: {
         countries: {
-          buckets: { key: string }[];
+          buckets: { key: string; doc_count: number }[];
         };
       };
     };
   }>(
     gql`
-      query($sqon: JSON) {
+      query COUNTRIES_AGGREGATION($sqon: JSON) {
         cohort {
           aggregations(filters: $sqon) {
             countries {
               buckets {
                 key
+                doc_count
               }
             }
           }
@@ -32,70 +33,19 @@ export default ({ sqon }: { sqon: {} | null }) => {
     {
       variables: {
         sqon: sqon
-      }
+      },
+      fetchPolicy: "network-only"
     }
   );
-  const countries = countriesQueryData?.cohort?.aggregations?.countries?.buckets?.map(
-    ({ key }) => key
-  );
-  const { data: participantsData, loading, error } = useQuery<{
-    cohort: {
-      [k: string]: {
-        cohort_attributes__number_of_participants: {
-          stats: {
-            sum: number;
-          };
-        };
-      };
-    };
-  }>(
-    gql`
-    query COUNTRY_PARTICIPANTS_QUERY($sqon: JSON) {
-      cohort {
-        ${countries
-          ?.map(
-            country => `
-            ${country}: aggregations(
-              filters: {
-                op: "and"
-                content: [
-                  { op: "in", content: { field: "countries", value: ["${country}"] } }
-                  $sqon
-                ]
-              }
-            ) {
-              cohort_attributes__number_of_participants {
-                stats {
-                  sum
-                }
-              }
-            }`
-          )
-          .join("\n")}
-      }
-    }
-  `,
-    {
-      variables: {
-        sqon: sqon || {
-          op: "and",
-          content: []
-        }
-      }
-    }
-  );
-  const chartData: ChartData = Object.entries(participantsData?.cohort || {})
-    .filter(([key]) => key !== "__typename")
-    .map(([country, countryAggregation]) => ({
-      country,
-      participants:
-        countryAggregation.cohort_attributes__number_of_participants.stats
-          ?.sum || 0
-    }));
+  const chartData: ChartData =
+    data?.cohort.aggregations.countries.buckets.map(({ key, doc_count }) => ({
+      cohorts: doc_count,
+      country: key
+    })) || [];
   return (
     <ResponsiveBar
       data={chartData}
-      keys={["participants"]}
+      keys={["cohorts"]}
       indexBy="country"
       margin={{ top: 10, right: 0, bottom: 40, left: 0 }}
       padding={0.3}
