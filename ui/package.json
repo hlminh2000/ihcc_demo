@@ -7,6 +7,7 @@
     "@arranger/components": "^2.1.1",
     "@nivo/bar": "^0.61.1",
     "@nivo/pie": "^0.61.1",
+    "@nivo/sankey": "^0.61.2",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",

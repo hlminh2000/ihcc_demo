@@ -19,7 +19,7 @@ export default ({ sqon }: { sqon: {} | null }) => {
     gql`
       query COUNTRIES_AGGREGATION($sqon: JSON) {
         cohort {
-          aggregations(filters: $sqon) {
+          aggregations(filters: $sqon, aggregations_filter_themselves: true) {
             countries {
               buckets {
                 key

@@ -2,6 +2,7 @@ import React from "react";
 import { css } from "emotion";
 import BarChart from "./BarChart";
 import BioSampleChart from "./BioSampleChart";
+import BiosampleSankey from "./BiosampleSankey";
 
 import { Row, Col } from "react-grid-system";
 
@@ -28,16 +29,16 @@ export default ({ sqon }: { sqon: {} | null }) => {
   return (
     <div className={container}>
       <Row className="row" style={{ width: "100%" }}>
-        <Col lg={9}>
+        <Col lg={6}>
           <div className={`${chartContainer}`}>
             <div className={chartTitleStyle}>Cohorts by Country</div>
             <BarChart sqon={sqon} />
           </div>
         </Col>
-        <Col lg={3}>
+        <Col lg={6}>
           <div className={`${chartContainer}`}>
             <div className={chartTitleStyle}>Biosample Types</div>
-            <BioSampleChart sqon={sqon} />
+            <BiosampleSankey sqon={sqon} />
           </div>
         </Col>
       </Row>
