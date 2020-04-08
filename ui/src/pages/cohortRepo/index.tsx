@@ -80,6 +80,11 @@ const tableContainer = css`
     max-height: calc(100vh - 430px);
     & .rt-table {
       border: solid 1px lightgrey;
+      & .rt-td:first-child,
+      & .rt-th:first-child {
+        /* hides the select checkboxes */
+        display: none;
+      }
       & .rt-thead {
         background: white;
         & .rt-tr .rt-th {
