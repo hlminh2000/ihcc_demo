@@ -7,10 +7,12 @@ import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
 import { stringify } from "querystring";
 
-const container = css`
+const container = (loading: boolean) => css`
   height: 100%;
   width: 100%;
   position: relative;
+  opacity: ${loading ? 0.5 : 1};
+  transition: all 0.25s;
 `;
 
 type ChartData = {
@@ -25,7 +27,7 @@ type ChartData = {
 };
 
 export default ({ sqon }: { sqon: {} | null }) => {
-  const { data: cohortsQueryData } = useQuery<{
+  const { data: cohortsQueryData, loading } = useQuery<{
     cohort: {
       hits: {
         edges: {
@@ -90,7 +92,7 @@ export default ({ sqon }: { sqon: {} | null }) => {
       return acc;
     }, [] as ChartData["links"]) || [];
   return (
-    <div className={container}>
+    <div className={container(loading)}>
       {chartNodes.length && chartLinks.length && (
         <ResponsiveSankey
           data={{
