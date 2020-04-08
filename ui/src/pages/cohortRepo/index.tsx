@@ -133,11 +133,12 @@ const facetScroller = (collapsed: boolean) => css`
     .header {
       margin: 0px;
       .title-wrapper {
-        padding: 10px;
-        padding: 10px;
+        padding: 7px;
         background-color: #e8e8f0;
         color: #202020;
         & .title {
+          font-size: 12px;
+          font-weight: bold;
           color: #202020;
         }
         &.collapsed {
