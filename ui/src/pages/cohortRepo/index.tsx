@@ -313,7 +313,7 @@ const PageContent = (props: { sqon: SQON | null }) => {
         Cell: ({ original }: { original: CohortDocument }) => (
           <BooleanCell
             isTrue={original.data_types.some(type => type === "genomic_data")}
-          ></BooleanCell>
+          />
         )
       }
     },
@@ -327,7 +327,7 @@ const PageContent = (props: { sqon: SQON | null }) => {
             isTrue={original.data_types.some(
               type => type === "environmental_data"
             )}
-          ></BooleanCell>
+          />
         )
       }
     },
@@ -341,7 +341,7 @@ const PageContent = (props: { sqon: SQON | null }) => {
             isTrue={original.data_types.some(
               type => type === "biospecimen_data"
             )}
-          ></BooleanCell>
+          />
         )
       }
     },
@@ -353,7 +353,16 @@ const PageContent = (props: { sqon: SQON | null }) => {
         Cell: ({ original }: { original: CohortDocument }) => (
           <BooleanCell
             isTrue={original.data_types.some(type => type === "clinical_data")}
-          ></BooleanCell>
+          />
+        )
+      }
+    },
+    {
+      index: 3,
+      content: {
+        Header: "Data Sharing Potential",
+        Cell: ({ original }: { original: CohortDocument }) => (
+          <BooleanCell isTrue />
         )
       }
     },
