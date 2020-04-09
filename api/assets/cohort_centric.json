@@ -82,6 +82,9 @@
       "website": {
         "type": "keyword"
       },
+      "data_types": {
+        "type": "keyword"
+      },
       "cohort_attributes": {
         "properties": {
           "aims_and_objectives": {

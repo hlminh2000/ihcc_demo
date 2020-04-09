@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { css } from "emotion";
+
 import GGMC_logo from "./GGMC_logo.png";
 import chevron from "./chevron-right.svg";
 import websiteIcon from "./website.svg";
 import arrow from "./arrow-right@2x.png";
-import Charts from "./charts";
+import checkmark from "./check.svg";
+import Xmark from "./X.svg";
 
+import Charts from "./charts";
 import {
   Arranger,
   Aggregations,
@@ -245,6 +248,36 @@ const TableWebsiteCell = ({ original }: { original: { website: string } }) => {
 
 type SQON = {};
 
+type CohortDocument = {
+  countries: string[];
+  cohort_attributes: {
+    enrollment_criteria: string[];
+  };
+  data_types: string[];
+};
+
+const BooleanCell = ({ isTrue }: { isTrue: boolean }) => {
+  const containerStyle = css`
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  `;
+  const iconStyle = css`
+    height: 11px;
+  `;
+  return (
+    <div className={`${containerStyle}`}>
+      {isTrue ? (
+        <img className={`${iconStyle}`} src={checkmark}></img>
+      ) : (
+        <img className={`${iconStyle}`} src={Xmark}></img>
+      )}
+    </div>
+  );
+};
+
 const PageContent = (props: { sqon: SQON | null }) => {
   const [facetPanelCollapsed, setFacetPanelCollapsed] = React.useState(false);
   const onFacetCollapserClick = () => {
@@ -253,20 +286,74 @@ const PageContent = (props: { sqon: SQON | null }) => {
 
   const customTableColumns = [
     {
-      index: 1,
+      index: 3,
       content: {
         accessor: "countries",
         Header: "Countries",
-        Cell: ({ original }: any) => <>{original.countries.join(", ")}</>
+        Cell: ({ original }: { original: CohortDocument }) => (
+          <>{original.countries.join(", ")}</>
+        )
       }
     },
     {
-      index: 1,
+      index: 3,
       content: {
         accessor: "cohort_attributes.enrollment_criteria",
         Header: "Enrollment Criteria",
-        Cell: ({ original }: any) => (
+        Cell: ({ original }: { original: CohortDocument }) => (
           <>{original.cohort_attributes.enrollment_criteria.join(", ")}</>
+        )
+      }
+    },
+    {
+      index: 3,
+      content: {
+        accessor: "data_types",
+        Header: "Genomic Data",
+        Cell: ({ original }: { original: CohortDocument }) => (
+          <BooleanCell
+            isTrue={original.data_types.some(type => type === "genomic_data")}
+          ></BooleanCell>
+        )
+      }
+    },
+    {
+      index: 3,
+      content: {
+        accessor: "data_types",
+        Header: "Environmental Data",
+        Cell: ({ original }: { original: CohortDocument }) => (
+          <BooleanCell
+            isTrue={original.data_types.some(
+              type => type === "environmental_data"
+            )}
+          ></BooleanCell>
+        )
+      }
+    },
+    {
+      index: 3,
+      content: {
+        accessor: "data_types",
+        Header: "Biospecimen Data",
+        Cell: ({ original }: { original: CohortDocument }) => (
+          <BooleanCell
+            isTrue={original.data_types.some(
+              type => type === "biospecimen_data"
+            )}
+          ></BooleanCell>
+        )
+      }
+    },
+    {
+      index: 3,
+      content: {
+        accessor: "data_types",
+        Header: "Clinical Data",
+        Cell: ({ original }: { original: CohortDocument }) => (
+          <BooleanCell
+            isTrue={original.data_types.some(type => type === "clinical_data")}
+          ></BooleanCell>
         )
       }
     },
@@ -345,7 +432,7 @@ const PageContent = (props: { sqon: SQON | null }) => {
 const CohortRepo = () => {
   const index = "cohort_centric";
   const graphqlField = "cohort";
-  const projectId = "demo_7";
+  const projectId = "demo_20";
   return (
     <Arranger
       disableSocket
