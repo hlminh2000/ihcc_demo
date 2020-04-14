@@ -7,6 +7,12 @@
     ],
     "pi_lead": "Joyce Tung",
     "website": "https://research.23andme.com",
+    "data_types": [
+      "genomic_data",
+      "environmental_data",
+      "biospecimen_data",
+      "clinical_data"
+    ],
     "cohort_attributes": {
       "aims_and_objectives": [
         "Research",
@@ -70,6 +76,11 @@
     ],
     "pi_lead": "Joyce Tung",
     "website": "https://research.23andme.com",
+    "data_types": [
+      "genomic_data",
+      "environmental_data",
+      "biospecimen_data"
+    ],
     "cohort_attributes": {
       "aims_and_objectives": [
         "Research",
