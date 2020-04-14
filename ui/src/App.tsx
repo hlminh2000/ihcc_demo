@@ -39,8 +39,12 @@ function App() {
     flex: 1;
   `;
 
+  const index = "cohort_centric";
+  const graphqlField = "cohort";
+  const projectId = "demo_20";
+
   const client = new ApolloClient({
-    uri: `${process.env.REACT_APP_ARRANGER_API}/demo_6/graphql`
+    uri: `${process.env.REACT_APP_ARRANGER_API}/${projectId}/graphql`,
   });
 
   return (
@@ -54,7 +58,11 @@ function App() {
           <Router history={customHistory}>
             <Switch>
               <Route exact path="/">
-                <CohortRepo />
+                <CohortRepo
+                  index={index}
+                  graphqlField={graphqlField}
+                  projectId={projectId}
+                />
               </Route>
             </Switch>
           </Router>

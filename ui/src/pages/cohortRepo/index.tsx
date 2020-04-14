@@ -13,7 +13,7 @@ import {
   Arranger,
   Aggregations,
   CurrentSQON,
-  Table
+  Table,
   // @ts-ignore
 } from "@arranger/components/dist/Arranger";
 import "@arranger/components/public/themeStyles/beagle/beagle.css";
@@ -39,6 +39,7 @@ const body = css`
   display: flex;
   flex-direction: column;
   flex: 1;
+  overflow: hidden;
 `;
 const bodyContent = css`
   position: relative;
@@ -91,8 +92,13 @@ const tableContainer = css`
       & .rt-thead {
         background: white;
         & .rt-tr .rt-th {
+          padding-top: 4px;
+          padding-bottom: 4px;
+          vertical-align: middle;
           & .rt-resizable-header-content {
+            font-size: 11px;
             color: #202020;
+            text-align: left;
           }
           &.-sort-asc {
             box-shadow: inset 0 3px 0 0 #748ea6;
@@ -100,8 +106,6 @@ const tableContainer = css`
           &.-sort-desc {
             box-shadow: inset 0 -3px 0 0 #748ea6;
           }
-          padding-top: 8px;
-          padding-bottom: 8px;
         }
       }
     }
@@ -292,8 +296,8 @@ const PageContent = (props: { sqon: SQON | null }) => {
         Header: "Countries",
         Cell: ({ original }: { original: CohortDocument }) => (
           <>{original.countries.join(", ")}</>
-        )
-      }
+        ),
+      },
     },
     {
       index: 3,
@@ -302,69 +306,101 @@ const PageContent = (props: { sqon: SQON | null }) => {
         Header: "Enrollment Criteria",
         Cell: ({ original }: { original: CohortDocument }) => (
           <>{original.cohort_attributes.enrollment_criteria.join(", ")}</>
-        )
-      }
+        ),
+      },
     },
     {
       index: 3,
+
       content: {
         accessor: "data_types",
-        Header: "Genomic Data",
+        width: 70,
+        Header: (
+          <>
+            Genomic <br /> Data
+          </>
+        ),
         Cell: ({ original }: { original: CohortDocument }) => (
           <BooleanCell
-            isTrue={original.data_types.some(type => type === "genomic_data")}
+            isTrue={original.data_types.some((type) => type === "genomic_data")}
           />
-        )
-      }
+        ),
+      },
     },
     {
       index: 3,
+
       content: {
         accessor: "data_types",
-        Header: "Environmental Data",
+        width: 100,
+        Header: (
+          <>
+            Environmental <br /> Data
+          </>
+        ),
         Cell: ({ original }: { original: CohortDocument }) => (
           <BooleanCell
             isTrue={original.data_types.some(
-              type => type === "environmental_data"
+              (type) => type === "environmental_data"
             )}
           />
-        )
-      }
+        ),
+      },
     },
     {
       index: 3,
+
       content: {
         accessor: "data_types",
-        Header: "Biospecimen Data",
+        width: 90,
+        Header: (
+          <>
+            Biospecimen <br /> Data
+          </>
+        ),
         Cell: ({ original }: { original: CohortDocument }) => (
           <BooleanCell
             isTrue={original.data_types.some(
-              type => type === "biospecimen_data"
+              (type) => type === "biospecimen_data"
             )}
           />
-        )
-      }
+        ),
+      },
     },
     {
       index: 3,
       content: {
         accessor: "data_types",
-        Header: "Clinical Data",
+        width: 60,
+        Header: (
+          <>
+            Clinical <br /> Data
+          </>
+        ),
         Cell: ({ original }: { original: CohortDocument }) => (
           <BooleanCell
-            isTrue={original.data_types.some(type => type === "clinical_data")}
+            isTrue={original.data_types.some(
+              (type) => type === "clinical_data"
+            )}
           />
-        )
-      }
+        ),
+      },
     },
     {
       index: 3,
       content: {
-        Header: "Data Sharing Potential",
+        width: 90,
+        sortable: false,
+        Header: (
+          <>
+            Data Sharing <br />
+            Potential
+          </>
+        ),
         Cell: ({ original }: { original: CohortDocument }) => (
           <BooleanCell isTrue />
-        )
-      }
+        ),
+      },
     },
     {
       index: 9999,
@@ -372,9 +408,9 @@ const PageContent = (props: { sqon: SQON | null }) => {
         accessor: "website",
         Header: "Website",
         Cell: TableWebsiteCell,
-        width: 70
-      }
-    }
+        width: 70,
+      },
+    },
   ];
 
   return (
@@ -383,12 +419,12 @@ const PageContent = (props: { sqon: SQON | null }) => {
         <div className={facetScroller(facetPanelCollapsed)}>
           <Aggregations
             style={{
-              width: "100%"
+              width: "100%",
             }}
             componentProps={{
               getTermAggProps: () => ({
-                maxTerms: 3
-              })
+                maxTerms: 3,
+              }),
             }}
             {...props}
           />
@@ -438,19 +474,22 @@ const PageContent = (props: { sqon: SQON | null }) => {
   );
 };
 
-const CohortRepo = () => {
-  const index = "cohort_centric";
-  const graphqlField = "cohort";
-  const projectId = "demo_20";
-  return (
-    <Arranger
-      disableSocket
-      index={index}
-      graphqlField={graphqlField}
-      projectId={projectId}
-      render={(props: any) => <PageContent {...props} />}
-    />
-  );
-};
+const CohortRepo = ({
+  index,
+  graphqlField,
+  projectId,
+}: {
+  index: string;
+  graphqlField: string;
+  projectId: string;
+}) => (
+  <Arranger
+    disableSocket
+    index={index}
+    graphqlField={graphqlField}
+    projectId={projectId}
+    render={(props: any) => <PageContent {...props} />}
+  />
+);
 
 export default CohortRepo;
