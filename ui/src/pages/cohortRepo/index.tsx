@@ -166,6 +166,7 @@ const facetScroller = (collapsed: boolean) => css`
         background-color: #e8e8f0;
         color: #202020;
         & .title {
+          margin-right: 10px;
           font-size: 12px;
           font-weight: bold;
           color: #202020;
