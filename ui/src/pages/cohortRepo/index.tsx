@@ -136,6 +136,26 @@ const facetScroller = (collapsed: boolean) => css`
     border-left: none;
     padding: 0px;
     margin: 0px;
+    & .header {
+      & .title-control {
+        align-items: center;
+        & .arrow {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+    & .header .filter .inputWrapper {
+      justify-content: unset !important;
+      & input {
+        max-width: 100%;
+      }
+      .inputIcon {
+        display: none;
+      }
+    }
     &:last-child {
       border-bottom: none;
     }
@@ -151,9 +171,11 @@ const facetScroller = (collapsed: boolean) => css`
           color: #202020;
         }
         &.collapsed {
-          padding-bottom: 10px;
           & > .arrow {
             padding: 0px;
+            ::after {
+              font-size: 18px;
+            }
           }
         }
       }
@@ -284,165 +306,164 @@ const BooleanCell = ({ isTrue }: { isTrue: boolean }) => {
   );
 };
 
+const customTableColumns = [
+  {
+    index: 1,
+    content: {
+      accessor: "cohort_name",
+      Header: "Cohort Name",
+      Cell: ({ original }: { original: CohortDocument }) => (
+        <>{original.cohort_name}</>
+      ),
+    },
+  },
+  {
+    index: 3,
+    content: {
+      accessor: "countries",
+      style: { whiteSpace: "unset" },
+      Header: "Countries",
+      Cell: ({ original }: { original: CohortDocument }) => (
+        <>{original.countries.join(", ")}</>
+      ),
+    },
+  },
+  {
+    index: 3,
+    content: {
+      accessor: "basic_cohort_attributes",
+      Header: "Enrollment Criteria",
+      maxWidth: 200,
+      Cell: ({ original }: { original: CohortDocument }) => (
+        <>{original.basic_cohort_attributes.join(", ")}</>
+      ),
+    },
+  },
+  {
+    index: 3,
+    content: {
+      accessor: "data_types",
+      resizable: false,
+      sortable: false,
+      width: 70,
+      Header: (
+        <>
+          Genomic <br /> Data
+        </>
+      ),
+      Cell: ({ original }: { original: CohortDocument }) => (
+        <BooleanCell
+          isTrue={original.data_types.some((type) => type === "Genomic Data")}
+        />
+      ),
+    },
+  },
+  {
+    index: 3,
+    content: {
+      accessor: "data_types",
+      resizable: false,
+      sortable: false,
+      width: 100,
+      Header: (
+        <>
+          Environmental <br /> Data
+        </>
+      ),
+      Cell: ({ original }: { original: CohortDocument }) => (
+        <BooleanCell
+          isTrue={original.data_types.some(
+            (type) => type === "Environmental Data"
+          )}
+        />
+      ),
+    },
+  },
+  {
+    index: 3,
+    content: {
+      accessor: "data_types",
+      resizable: false,
+      sortable: false,
+      width: 90,
+      Header: (
+        <>
+          Biospecimen <br /> Data
+        </>
+      ),
+      Cell: ({ original }: { original: CohortDocument }) => (
+        <BooleanCell
+          isTrue={original.data_types.some((type) => type === "Biospecimens")}
+        />
+      ),
+    },
+  },
+  {
+    index: 3,
+    content: {
+      accessor: "data_types",
+      resizable: false,
+      sortable: false,
+      width: 60,
+      Header: (
+        <>
+          Clinical <br /> Data
+        </>
+      ),
+      Cell: ({ original }: { original: CohortDocument }) => (
+        <BooleanCell
+          isTrue={original.data_types.some(
+            (type) => type === "Phenotypic/Clinical Data"
+          )}
+        />
+      ),
+    },
+  },
+  {
+    index: 3,
+    content: {
+      width: 90,
+      resizable: false,
+      sortable: false,
+      Header: (
+        <>
+          Data Sharing <br />
+          Potential
+        </>
+      ),
+      Cell: ({ original }: { original: CohortDocument }) => (
+        <BooleanCell isTrue />
+      ),
+    },
+  },
+  {
+    index: 3,
+    content: {
+      accessor: "pi_lead",
+      Header: "PI Lead",
+      style: { whiteSpace: "unset" },
+      Cell: ({ original }: { original: CohortDocument }) => (
+        <>{original.pi_lead}</>
+      ),
+    },
+  },
+  {
+    index: 9999,
+    content: {
+      resizable: false,
+      accessor: "website",
+      Header: "Website",
+      Cell: TableWebsiteCell,
+      width: 70,
+    },
+  },
+];
+
 const PageContent = (props: { sqon: SQON | null }) => {
   const [facetPanelCollapsed, setFacetPanelCollapsed] = React.useState(false);
   const onFacetCollapserClick = () => {
     setFacetPanelCollapsed(!facetPanelCollapsed);
   };
-
-  const customTableColumns = [
-    {
-      index: 1,
-      content: {
-        accessor: "cohort_name",
-        Header: "Cohort Name",
-        Cell: ({ original }: { original: CohortDocument }) => (
-          <>{original.cohort_name}</>
-        ),
-      },
-    },
-    {
-      index: 3,
-      content: {
-        accessor: "countries",
-        style: { whiteSpace: "unset" },
-        Header: "Countries",
-        Cell: ({ original }: { original: CohortDocument }) => (
-          <>{original.countries.join(", ")}</>
-        ),
-      },
-    },
-    {
-      index: 3,
-      content: {
-        accessor: "basic_cohort_attributes",
-        Header: "Enrollment Criteria",
-        maxWidth: 200,
-        Cell: ({ original }: { original: CohortDocument }) => (
-          <>{original.basic_cohort_attributes.join(", ")}</>
-        ),
-      },
-    },
-    {
-      index: 3,
-      content: {
-        accessor: "data_types",
-        resizable: false,
-        sortable: false,
-        width: 70,
-        Header: (
-          <>
-            Genomic <br /> Data
-          </>
-        ),
-        Cell: ({ original }: { original: CohortDocument }) => (
-          <BooleanCell
-            isTrue={original.data_types.some((type) => type === "Genomic Data")}
-          />
-        ),
-      },
-    },
-    {
-      index: 3,
-      content: {
-        accessor: "data_types",
-        resizable: false,
-        sortable: false,
-        width: 100,
-        Header: (
-          <>
-            Environmental <br /> Data
-          </>
-        ),
-        Cell: ({ original }: { original: CohortDocument }) => (
-          <BooleanCell
-            isTrue={original.data_types.some(
-              (type) => type === "Environmental Data"
-            )}
-          />
-        ),
-      },
-    },
-    {
-      index: 3,
-      content: {
-        accessor: "data_types",
-        resizable: false,
-        sortable: false,
-        width: 90,
-        Header: (
-          <>
-            Biospecimen <br /> Data
-          </>
-        ),
-        Cell: ({ original }: { original: CohortDocument }) => (
-          <BooleanCell
-            isTrue={original.data_types.some((type) => type === "Biospecimens")}
-          />
-        ),
-      },
-    },
-    {
-      index: 3,
-      content: {
-        accessor: "data_types",
-        resizable: false,
-        sortable: false,
-        width: 60,
-        Header: (
-          <>
-            Clinical <br /> Data
-          </>
-        ),
-        Cell: ({ original }: { original: CohortDocument }) => (
-          <BooleanCell
-            isTrue={original.data_types.some(
-              (type) => type === "Phenotypic/Clinical Data"
-            )}
-          />
-        ),
-      },
-    },
-    {
-      index: 3,
-      content: {
-        width: 90,
-        resizable: false,
-        sortable: false,
-        Header: (
-          <>
-            Data Sharing <br />
-            Potential
-          </>
-        ),
-        Cell: ({ original }: { original: CohortDocument }) => (
-          <BooleanCell isTrue />
-        ),
-      },
-    },
-    {
-      index: 3,
-      content: {
-        accessor: "pi_lead",
-        Header: "PI Lead",
-        style: { whiteSpace: "unset" },
-        Cell: ({ original }: { original: CohortDocument }) => (
-          <>{original.pi_lead}</>
-        ),
-      },
-    },
-    {
-      index: 9999,
-      content: {
-        resizable: false,
-        accessor: "website",
-        Header: "Website",
-        Cell: TableWebsiteCell,
-        width: 70,
-      },
-    },
-  ];
-
   return (
     <div className={pageContainer}>
       <div className={facetPanelContainer(facetPanelCollapsed)}>
