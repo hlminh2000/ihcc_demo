@@ -259,6 +259,7 @@ type CohortDocument = {
   countries: string[];
   basic_cohort_attributes: string[];
   data_types: string[];
+  pi_lead: string;
 };
 
 const BooleanCell = ({ isTrue }: { isTrue: boolean }) => {
@@ -304,6 +305,7 @@ const PageContent = (props: { sqon: SQON | null }) => {
       index: 3,
       content: {
         accessor: "countries",
+        style: { whiteSpace: "unset" },
         Header: "Countries",
         Cell: ({ original }: { original: CohortDocument }) => (
           <>{original.countries.join(", ")}</>
@@ -415,6 +417,17 @@ const PageContent = (props: { sqon: SQON | null }) => {
         ),
         Cell: ({ original }: { original: CohortDocument }) => (
           <BooleanCell isTrue />
+        ),
+      },
+    },
+    {
+      index: 3,
+      content: {
+        accessor: "pi_lead",
+        Header: "PI Lead",
+        style: { whiteSpace: "unset" },
+        Cell: ({ original }: { original: CohortDocument }) => (
+          <>{original.pi_lead}</>
         ),
       },
     },
