@@ -10,6 +10,12 @@ dev-api:
 start-api:
 	cd ./api && npm run start
 
+prod-restart-ui:
+	cd ./ui \
+	&& npm ci \
+	&& npm run build \
+	&& rm -rf ../api/public && cp -r ./build ../api/public
+
 prod-restart:
 	cd ./ui \
 	&& npm ci \
