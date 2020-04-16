@@ -144,6 +144,10 @@ const facetScroller = (collapsed: boolean) => css`
           display: flex;
           justify-content: center;
           align-items: center;
+          ::after {
+            font-size: 18px;
+            line-height: 100%;
+          }
         }
       }
     }
@@ -174,9 +178,6 @@ const facetScroller = (collapsed: boolean) => css`
         &.collapsed {
           & > .arrow {
             padding: 0px;
-            ::after {
-              font-size: 18px;
-            }
           }
         }
       }
