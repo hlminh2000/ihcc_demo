@@ -35,7 +35,7 @@ export default ({ sqon }: { sqon: {} | null }) => {
   const { data: bioSampleQueryData } = useQuery<{
     cohort: {
       aggregations: {
-        biosample__biosample_types: {
+        biosample__sample_types: {
           buckets: {
             key: string;
             doc_count: number;
@@ -48,7 +48,7 @@ export default ({ sqon }: { sqon: {} | null }) => {
       query BIOSAMPLE_AGGREGATION($sqon: JSON) {
         cohort {
           aggregations(aggregations_filter_themselves: true, filters: $sqon) {
-            biosample__biosample_types {
+            biosample__sample_types {
               buckets {
                 key
                 doc_count
@@ -60,18 +60,18 @@ export default ({ sqon }: { sqon: {} | null }) => {
     `,
     {
       variables: {
-        sqon: sqon
+        sqon: sqon,
       },
-      fetchPolicy: "network-only"
+      fetchPolicy: "network-only",
     }
   );
 
   const chartData: ChartData =
-    bioSampleQueryData?.cohort.aggregations.biosample__biosample_types.buckets.map(
+    bioSampleQueryData?.cohort.aggregations.biosample__sample_types.buckets.map(
       ({ doc_count, key }) => ({
         id: key,
         label: key,
-        value: doc_count
+        value: doc_count,
       })
     ) || [];
 

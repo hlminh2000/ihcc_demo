@@ -2,10 +2,14 @@ import React from "react";
 import { ResponsivePie } from "@nivo/pie";
 import { ResponsiveSankey } from "@nivo/sankey";
 import { css } from "emotion";
+import take from "lodash/take";
+import identity from "lodash/identity";
+import uniqBy from "lodash/uniqBy";
 
 import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
 import { stringify } from "querystring";
+import { link } from "fs";
 
 const container = (loading: boolean) => css`
   height: 100%;
@@ -34,7 +38,7 @@ export default ({ sqon }: { sqon: {} | null }) => {
           node: {
             cohort_name: string;
             biosample: {
-              biosample_types: string[];
+              sample_types: string[];
             };
           };
         }[];
@@ -44,18 +48,12 @@ export default ({ sqon }: { sqon: {} | null }) => {
     gql`
       query($sqon: JSON) {
         cohort {
-          hits(
-            first: 1000
-            sort: [
-              { field: "cohort_attributes.number_of_participants", order: desc }
-            ]
-            filters: $sqon
-          ) {
+          hits(first: 1000, filters: $sqon) {
             edges {
               node {
                 cohort_name
                 biosample {
-                  biosample_types
+                  sample_types
                 }
               }
             }
@@ -65,41 +63,62 @@ export default ({ sqon }: { sqon: {} | null }) => {
     `,
     {
       variables: { sqon },
-      fetchPolicy: "network-only"
+      fetchPolicy: "network-only",
     }
   );
-  const chartNodes: ChartData["nodes"] =
+  const topCohorts = take(
+    cohortsQueryData?.cohort.hits.edges
+      .map((cohort) => ({
+        name: cohort.node.cohort_name,
+        sampleCount: cohort.node.biosample.sample_types.length,
+      }))
+      .sort((a, b) => b.sampleCount - a.sampleCount),
+    5
+  );
+  const isInTopCohortList = (cohortName: string) =>
+    topCohorts.some(({ name }) => name === cohortName);
+  const OTHER_COHORTS = "Other Cohorts";
+  const chartNodes: ChartData["nodes"] = uniqBy(
     cohortsQueryData?.cohort.hits.edges.reduce((acc, { node }) => {
       [
-        ...node.biosample.biosample_types.map(bioSampleType => ({
-          id: bioSampleType
+        ...node.biosample.sample_types.map((bioSampleType) => ({
+          id: bioSampleType,
         })),
-        { id: node.cohort_name }
-      ]
-        .filter(chartNode => !acc.some(({ id }) => id === chartNode.id))
-        .forEach(chartNode => acc.push(chartNode));
+        isInTopCohortList(node.cohort_name) &&
+        node.biosample.sample_types.length
+          ? { id: node.cohort_name }
+          : { id: OTHER_COHORTS },
+      ].forEach((chartNode) => chartNode && acc.push(chartNode));
       return acc;
-    }, [] as ChartData["nodes"]) || [];
-  const chartLinks: ChartData["links"] =
+    }, [] as ChartData["nodes"]) || [],
+    "id"
+  );
+  const chartLinks: ChartData["links"] = uniqBy(
     cohortsQueryData?.cohort.hits.edges.reduce((acc, { node }) => {
-      node.biosample.biosample_types
-        .map(sampleType => ({
+      node.biosample.sample_types
+        .map((sampleType) => ({
           source: sampleType,
-          target: node.cohort_name,
-          value: 1 as 1
+          target:
+            isInTopCohortList(node.cohort_name) &&
+            node.biosample.sample_types.length
+              ? node.cohort_name
+              : OTHER_COHORTS,
+          value: 1 as 1,
         }))
-        .forEach(chartNode => acc.push(chartNode));
+        .forEach((chartNode) => acc.push(chartNode));
       return acc;
-    }, [] as ChartData["links"]) || [];
+    }, [] as ChartData["links"]) || [],
+    (link) => `${link.source}_${link.target}`
+  );
   return (
     <div className={container(loading)}>
       {chartNodes.length && chartLinks.length && (
         <ResponsiveSankey
           data={{
             nodes: chartNodes,
-            links: chartLinks
+            links: chartLinks,
           }}
-          margin={{ top: 10, right: 85, bottom: 15, left: 85 }}
+          margin={{ top: 10, right: 200, bottom: 15, left: 85 }}
           align="justify"
           colors={{ scheme: "category10" }}
           nodeOpacity={1}

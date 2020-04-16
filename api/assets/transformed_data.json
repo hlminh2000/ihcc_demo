@@ -1,0 +1,180 @@
+[
+  {
+    "cohort_name": "Korean Genome and Epidemiology Study (KoGES)",
+    "countries": [
+      "South Korea",
+      "Vietnam",
+      "Cambodia",
+      "Japan",
+      "China"
+    ],
+    "basic_cohort_attributes": [],
+    "biosample": {
+      "biosample_variables": [],
+      "sample_types": [
+        "blood",
+        "urine"
+      ]
+    },
+    "data_types": [
+      "Genomic Data",
+      "Environmental Data",
+      "Biospecimens",
+      "Phenotypic/Clinical Data"
+    ],
+    "laboratory_measures": {
+      "genomic_variables": [],
+      "microbiology": [
+        "microbial data"
+      ]
+    },
+    "pi_lead": "Sung Soo Kim",
+    "questionnaire_survey_data": {
+      "socio_demographic_and_economic_characteristics": [
+        "education",
+        "family and household structure",
+        "occupation"
+      ],
+      "lifestyle_and_behaviours": [
+        "alcohol",
+        "nutrition",
+        "sleep",
+        "tobacco"
+      ],
+      "physiological_measurements": [
+        "height",
+        "weight",
+        "blood pressure",
+        "heart rate"
+      ]
+    },
+    "website": "http://www.nih.go.kr/NIH/eng/contents/NihEngContentView.jsp?cid=65199&menuIds=HOME004-MNU2261-MNU2262-MNU2263-MNU2264"
+  },
+  {
+    "cohort_name": "Golestan Cohort Study",
+    "countries": [
+      "Iran"
+    ],
+    "basic_cohort_attributes": [
+      "demographic data"
+    ],
+    "biosample": {
+      "biosample_variables": [],
+      "sample_types": [
+        "blood"
+      ]
+    },
+    "data_types": [
+      "Environmental Data",
+      "Biospecimens",
+      "Phenotypic/Clinical Data"
+    ],
+    "laboratory_measures": {
+      "genomic_variables": [],
+      "microbiology": []
+    },
+    "pi_lead": "Reza Malekzadeh, Christian Abnet, Paolo Boffetta, Paul Brennan, Farin Kamangar, Arash Etemadi",
+    "questionnaire_survey_data": {
+      "socio_demographic_and_economic_characteristics": [],
+      "lifestyle_and_behaviours": [],
+      "physiological_measurements": []
+    },
+    "website": "https://dceg2.cancer.gov/gemshare/"
+  },
+  {
+    "cohort_name": "Genomics England / 100,000 Genomes Project",
+    "countries": [
+      "England"
+    ],
+    "basic_cohort_attributes": [],
+    "biosample": {
+      "biosample_variables": [],
+      "sample_types": []
+    },
+    "data_types": [
+      "Genomic Data",
+      "Biospecimens",
+      "Phenotypic/Clinical Data"
+    ],
+    "laboratory_measures": {
+      "genomic_variables": [],
+      "microbiology": []
+    },
+    "pi_lead": "Mark Caulfield",
+    "questionnaire_survey_data": {
+      "socio_demographic_and_economic_characteristics": [
+        "gender"
+      ],
+      "lifestyle_and_behaviours": [],
+      "physiological_measurements": [
+        "height",
+        "weight"
+      ]
+    },
+    "website": "https://www.genomicsengland.co.uk/"
+  },
+  {
+    "cohort_name": "SAPRIN (South African Population Research Infrastructure Network)",
+    "countries": [
+      "South Africa"
+    ],
+    "basic_cohort_attributes": [],
+    "biosample": {
+      "biosample_variables": [],
+      "sample_types": []
+    },
+    "data_types": [
+      "Biospecimens",
+      "Phenotypic/Clinical Data"
+    ],
+    "laboratory_measures": {
+      "genomic_variables": [],
+      "microbiology": []
+    },
+    "pi_lead": "Kobus Herbst",
+    "questionnaire_survey_data": {
+      "socio_demographic_and_economic_characteristics": [
+        "age/birthdate",
+        "biological sex",
+        "education",
+        "ethnicity/race",
+        "family and household structure",
+        "occupation",
+        "residence"
+      ],
+      "lifestyle_and_behaviours": [],
+      "physiological_measurements": []
+    },
+    "website": "http://saprin.mrc.ac.za/"
+  },
+  {
+    "cohort_name": "Africa Health Research Institute (AHRI) Population Cohort",
+    "countries": [
+      "South Africa"
+    ],
+    "basic_cohort_attributes": [],
+    "biosample": {
+      "biosample_variables": [],
+      "sample_types": [
+        "blood",
+        "urine"
+      ]
+    },
+    "data_types": [
+      "Genomic Data",
+      "Biospecimens",
+      "Phenotypic/Clinical Data"
+    ],
+    "laboratory_measures": {
+      "genomic_variables": [],
+      "microbiology": []
+    },
+    "pi_lead": "Deenan Pillay",
+    "questionnaire_survey_data": {
+      "socio_demographic_and_economic_characteristics": [],
+      "lifestyle_and_behaviours": [],
+      "physiological_measurements": []
+    },
+    "website": "https://www.ahri.org"
+  }
+]

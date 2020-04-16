@@ -95,10 +95,12 @@ const tableContainer = css`
           padding-top: 4px;
           padding-bottom: 4px;
           vertical-align: middle;
+
+          font-size: 11px;
+          color: #202020;
+          text-align: left;
           & .rt-resizable-header-content {
-            font-size: 11px;
             color: #202020;
-            text-align: left;
           }
           &.-sort-asc {
             box-shadow: inset 0 3px 0 0 #748ea6;
@@ -253,10 +255,9 @@ const TableWebsiteCell = ({ original }: { original: { website: string } }) => {
 type SQON = {};
 
 type CohortDocument = {
+  cohort_name: string;
   countries: string[];
-  cohort_attributes: {
-    enrollment_criteria: string[];
-  };
+  basic_cohort_attributes: string[];
   data_types: string[];
 };
 
@@ -290,6 +291,16 @@ const PageContent = (props: { sqon: SQON | null }) => {
 
   const customTableColumns = [
     {
+      index: 1,
+      content: {
+        accessor: "cohort_name",
+        Header: "Cohort Name",
+        Cell: ({ original }: { original: CohortDocument }) => (
+          <>{original.cohort_name}</>
+        ),
+      },
+    },
+    {
       index: 3,
       content: {
         accessor: "countries",
@@ -302,18 +313,20 @@ const PageContent = (props: { sqon: SQON | null }) => {
     {
       index: 3,
       content: {
-        accessor: "cohort_attributes.enrollment_criteria",
+        accessor: "basic_cohort_attributes",
         Header: "Enrollment Criteria",
+        maxWidth: 200,
         Cell: ({ original }: { original: CohortDocument }) => (
-          <>{original.cohort_attributes.enrollment_criteria.join(", ")}</>
+          <>{original.basic_cohort_attributes.join(", ")}</>
         ),
       },
     },
     {
       index: 3,
-
       content: {
         accessor: "data_types",
+        resizable: false,
+        sortable: false,
         width: 70,
         Header: (
           <>
@@ -322,16 +335,17 @@ const PageContent = (props: { sqon: SQON | null }) => {
         ),
         Cell: ({ original }: { original: CohortDocument }) => (
           <BooleanCell
-            isTrue={original.data_types.some((type) => type === "genomic_data")}
+            isTrue={original.data_types.some((type) => type === "Genomic Data")}
           />
         ),
       },
     },
     {
       index: 3,
-
       content: {
         accessor: "data_types",
+        resizable: false,
+        sortable: false,
         width: 100,
         Header: (
           <>
@@ -341,7 +355,7 @@ const PageContent = (props: { sqon: SQON | null }) => {
         Cell: ({ original }: { original: CohortDocument }) => (
           <BooleanCell
             isTrue={original.data_types.some(
-              (type) => type === "environmental_data"
+              (type) => type === "Environmental Data"
             )}
           />
         ),
@@ -349,9 +363,10 @@ const PageContent = (props: { sqon: SQON | null }) => {
     },
     {
       index: 3,
-
       content: {
         accessor: "data_types",
+        resizable: false,
+        sortable: false,
         width: 90,
         Header: (
           <>
@@ -360,9 +375,7 @@ const PageContent = (props: { sqon: SQON | null }) => {
         ),
         Cell: ({ original }: { original: CohortDocument }) => (
           <BooleanCell
-            isTrue={original.data_types.some(
-              (type) => type === "biospecimen_data"
-            )}
+            isTrue={original.data_types.some((type) => type === "Biospecimens")}
           />
         ),
       },
@@ -371,6 +384,8 @@ const PageContent = (props: { sqon: SQON | null }) => {
       index: 3,
       content: {
         accessor: "data_types",
+        resizable: false,
+        sortable: false,
         width: 60,
         Header: (
           <>
@@ -380,7 +395,7 @@ const PageContent = (props: { sqon: SQON | null }) => {
         Cell: ({ original }: { original: CohortDocument }) => (
           <BooleanCell
             isTrue={original.data_types.some(
-              (type) => type === "clinical_data"
+              (type) => type === "Phenotypic/Clinical Data"
             )}
           />
         ),
@@ -390,6 +405,7 @@ const PageContent = (props: { sqon: SQON | null }) => {
       index: 3,
       content: {
         width: 90,
+        resizable: false,
         sortable: false,
         Header: (
           <>
@@ -405,6 +421,7 @@ const PageContent = (props: { sqon: SQON | null }) => {
     {
       index: 9999,
       content: {
+        resizable: false,
         accessor: "website",
         Header: "Website",
         Cell: TableWebsiteCell,

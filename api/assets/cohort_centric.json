@@ -85,34 +85,12 @@
       "data_types": {
         "type": "keyword"
       },
-      "cohort_attributes": {
-        "properties": {
-          "aims_and_objectives": {
-            "type": "keyword"
-          },
-          "study_design": {
-            "type": "keyword"
-          },
-          "enrollment_criteria": {
-            "type": "keyword"
-          },
-          "number_of_participants": {
-            "type": "integer"
-          },
-          "timeline": {
-            "type": "keyword"
-          },
-          "demographic_variables": {
-            "type": "keyword"
-          },
-          "population_variables": {
-            "type": "keyword"
-          }
-        }
+      "basic_cohort_attributes": {
+        "type": "keyword"
       },
       "biosample": {
         "properties": {
-          "biosample_types": {
+          "sample_types": {
             "type": "keyword"
           },
           "biosample_variables": {
@@ -120,12 +98,25 @@
           }
         }
       },
-      "laboratory": {
+      "laboratory_measures": {
         "properties": {
           "genomic_variables": {
             "type": "keyword"
           },
-          "microbiological_variables": {
+          "microbiology": {
+            "type": "keyword"
+          }
+        }
+      },
+      "questionnaire_survey_data": {
+        "properties": {
+          "lifestyle_and_behaviours": {
+            "type": "keyword"
+          },
+          "physiological_measurements": {
+            "type": "keyword"
+          },
+          "socio_demographic_and_economic_characteristics": {
             "type": "keyword"
           }
         }
