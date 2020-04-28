@@ -4,6 +4,7 @@
     "countries": [
       "Iran"
     ],
+    "current_enrollment": 50000,
     "basic_cohort_attributes": [],
     "biosample": {
       "biosample_variables": [],
@@ -44,6 +45,7 @@
       "Japan",
       "China"
     ],
+    "current_enrollment": 235000,
     "basic_cohort_attributes": [],
     "biosample": {
       "biosample_variables": [],
@@ -79,6 +81,7 @@
     "countries": [
       "England"
     ],
+    "current_enrollment": 100000,
     "basic_cohort_attributes": [],
     "biosample": {
       "biosample_variables": [],
@@ -111,6 +114,7 @@
     "countries": [
       "South Africa"
     ],
+    "current_enrollment": 350000,
     "basic_cohort_attributes": [],
     "biosample": {
       "biosample_variables": [],
@@ -141,6 +145,7 @@
     "countries": [
       "South Africa"
     ],
+    "current_enrollment": 130000,
     "basic_cohort_attributes": [],
     "biosample": {
       "biosample_variables": [],
@@ -176,6 +181,7 @@
     "countries": [
       "USA"
     ],
+    "current_enrollment": 6800000,
     "basic_cohort_attributes": [],
     "biosample": {
       "biosample_variables": [],
@@ -204,6 +210,7 @@
     "countries": [
       "Australia"
     ],
+    "current_enrollment": 267153,
     "basic_cohort_attributes": [
       "aims_and_objectives"
     ],
@@ -238,6 +245,7 @@
     "countries": [
       "Sweden"
     ],
+    "current_enrollment": 812073,
     "basic_cohort_attributes": [
       "study_design"
     ],
@@ -272,6 +280,7 @@
     "countries": [
       "Japan"
     ],
+    "current_enrollment": 270000,
     "basic_cohort_attributes": [],
     "biosample": {
       "biosample_variables": [],
@@ -304,6 +313,7 @@
     "countries": [
       "USA"
     ],
+    "current_enrollment": 244000,
     "basic_cohort_attributes": [
       "location"
     ],
@@ -342,6 +352,7 @@
     "countries": [
       "Canada"
     ],
+    "current_enrollment": 315000,
     "basic_cohort_attributes": [
       "aims_and_objectives",
       "age_range"
@@ -375,6 +386,7 @@
     "countries": [
       "USA"
     ],
+    "current_enrollment": 1185106,
     "basic_cohort_attributes": [
       "aims_and_objectives"
     ],
@@ -409,6 +421,7 @@
     "countries": [
       "USA"
     ],
+    "current_enrollment": 184194,
     "basic_cohort_attributes": [],
     "biosample": {
       "biosample_variables": [],
@@ -448,6 +461,7 @@
       "Saudi Arabia",
       "Australia"
     ],
+    "current_enrollment": 500000,
     "basic_cohort_attributes": [
       "study_design",
       "genders_studied_in_cohort"
@@ -483,6 +497,7 @@
     "countries": [
       "China"
     ],
+    "current_enrollment": 512891,
     "basic_cohort_attributes": [
       "location"
     ],
@@ -517,6 +532,7 @@
     "countries": [
       "China"
     ],
+    "current_enrollment": 2000000,
     "basic_cohort_attributes": [
       "age_range",
       "location"
@@ -552,6 +568,7 @@
     "countries": [
       "France"
     ],
+    "current_enrollment": 210000,
     "basic_cohort_attributes": [
       "timeline"
     ],
@@ -589,6 +606,7 @@
     "countries": [
       "Denmark"
     ],
+    "current_enrollment": 198028,
     "basic_cohort_attributes": [
       "genders_studied_in_cohort"
     ],
@@ -623,6 +641,7 @@
     "countries": [
       "UK"
     ],
+    "current_enrollment": 41500,
     "basic_cohort_attributes": [],
     "biosample": {
       "biosample_variables": [],
@@ -655,6 +674,7 @@
     "countries": [
       "Brazil: six cities"
     ],
+    "current_enrollment": 15105,
     "basic_cohort_attributes": [
       "study_design"
     ],
@@ -689,6 +709,7 @@
     "countries": [
       "USA"
     ],
+    "current_enrollment": 0,
     "basic_cohort_attributes": [
       "data_collection_events",
       "location"
@@ -731,6 +752,7 @@
       "Greece",
       "Sweden"
     ],
+    "current_enrollment": 521000,
     "basic_cohort_attributes": [],
     "biosample": {
       "biosample_variables": [],
@@ -765,6 +787,7 @@
     "countries": [
       "Sweden"
     ],
+    "current_enrollment": 25000,
     "basic_cohort_attributes": [
       "criteria_for_enrollment_and_recruitment_procedures"
     ],
@@ -803,6 +826,7 @@
     "countries": [
       "Estonia"
     ],
+    "current_enrollment": 200000,
     "basic_cohort_attributes": [
       "data_collection_events",
       "sexes_studied_in_cohort"
@@ -836,6 +860,7 @@
     "countries": [
       "Finland"
     ],
+    "current_enrollment": 950000,
     "basic_cohort_attributes": [],
     "biosample": {
       "biosample_variables": [],
@@ -875,6 +900,7 @@
       "Isle of Man",
       "Channel Islands"
     ],
+    "current_enrollment": 113000,
     "basic_cohort_attributes": [
       "genders_studied_in_cohort"
     ],
@@ -909,6 +935,7 @@
     "countries": [
       "US"
     ],
+    "current_enrollment": 35000,
     "basic_cohort_attributes": [
       "age_range"
     ],
@@ -941,6 +968,7 @@
     "countries": [
       "Israel"
     ],
+    "current_enrollment": 140000,
     "basic_cohort_attributes": [
       "timeline"
     ],
@@ -975,6 +1003,7 @@
     "countries": [
       "Japan"
     ],
+    "current_enrollment": 130000,
     "basic_cohort_attributes": [
       "timeline"
     ],
@@ -1009,6 +1038,7 @@
     "countries": [
       "Japan"
     ],
+    "current_enrollment": 115000,
     "basic_cohort_attributes": [],
     "biosample": {
       "biosample_variables": [],
@@ -1039,6 +1069,7 @@
     "countries": [
       "USA; Northern California"
     ],
+    "current_enrollment": 210000,
     "basic_cohort_attributes": [],
     "biosample": {
       "biosample_variables": [],
@@ -1075,6 +1106,7 @@
     "countries": [
       "Republic of Korea"
     ],
+    "current_enrollment": 830000,
     "basic_cohort_attributes": [
       "sexes_studied_in_cohort",
       "num_participants"
@@ -1112,6 +1144,7 @@
     "countries": [
       "Korea"
     ],
+    "current_enrollment": 156701,
     "basic_cohort_attributes": [
       "timeline",
       "num_participants"
@@ -1147,6 +1180,7 @@
     "countries": [
       "Sweden"
     ],
+    "current_enrollment": 51300,
     "basic_cohort_attributes": [
       "study_design",
       "sexes_studied_in_cohort"
@@ -1184,6 +1218,7 @@
       "Australia",
       "USA"
     ],
+    "current_enrollment": 235000,
     "basic_cohort_attributes": [
       "data_collection_events"
     ],
@@ -1222,6 +1257,7 @@
     "countries": [
       "Malaysia"
     ],
+    "current_enrollment": 106527,
     "basic_cohort_attributes": [],
     "biosample": {
       "biosample_variables": [],
@@ -1254,6 +1290,7 @@
     "countries": [
       "Chile"
     ],
+    "current_enrollment": 9200,
     "basic_cohort_attributes": [],
     "biosample": {
       "biosample_variables": [],
@@ -1284,6 +1321,7 @@
     "countries": [
       "Mexico"
     ],
+    "current_enrollment": 159755,
     "basic_cohort_attributes": [
       "genders_studied_in_cohort",
       "criteria_for_enrollment_and_recruitment_procedures"
@@ -1319,6 +1357,7 @@
     "countries": [
       "USA"
     ],
+    "current_enrollment": 785000,
     "basic_cohort_attributes": [
       "aims_and_objectives",
       "num_participants"
@@ -1355,6 +1394,7 @@
       "England",
       "Scotland"
     ],
+    "current_enrollment": 1320000,
     "basic_cohort_attributes": [
       "location"
     ],
@@ -1389,6 +1429,7 @@
     "countries": [
       "USA (Hawaii; California)"
     ],
+    "current_enrollment": 215251,
     "basic_cohort_attributes": [
       "data_collection_events"
     ],
@@ -1425,6 +1466,7 @@
     "countries": [
       "USA"
     ],
+    "current_enrollment": 252160,
     "basic_cohort_attributes": [
       "timeline"
     ],
@@ -1465,6 +1507,7 @@
     "countries": [
       "Netherlands"
     ],
+    "current_enrollment": 275000,
     "basic_cohort_attributes": [
       "genders_studied_in_cohort",
       "num_participants"
@@ -1500,6 +1543,7 @@
     "countries": [
       "Canada (Province of Newfoundland and Labrador)"
     ],
+    "current_enrollment": 520000,
     "basic_cohort_attributes": [],
     "biosample": {
       "biosample_variables": [],
@@ -1536,6 +1580,7 @@
     "countries": [
       "USA"
     ],
+    "current_enrollment": 121700,
     "basic_cohort_attributes": [],
     "biosample": {
       "biosample_variables": [],
@@ -1568,6 +1613,7 @@
     "countries": [
       "USA"
     ],
+    "current_enrollment": 116430,
     "basic_cohort_attributes": [],
     "biosample": {
       "biosample_variables": [],
@@ -1600,6 +1646,7 @@
     "countries": [
       ""
     ],
+    "current_enrollment": 40000,
     "basic_cohort_attributes": [],
     "biosample": {
       "biosample_variables": [],
@@ -1636,6 +1683,7 @@
     "countries": [
       "Sweden"
     ],
+    "current_enrollment": 135000,
     "basic_cohort_attributes": [
       "sexes_studied_in_cohort",
       "timeline"
@@ -1671,6 +1719,7 @@
     "countries": [
       "Norway"
     ],
+    "current_enrollment": 5266270,
     "basic_cohort_attributes": [
       "num_participants"
     ],
@@ -1709,6 +1758,7 @@
     "countries": [
       "Norway"
     ],
+    "current_enrollment": 284000,
     "basic_cohort_attributes": [
       "aims_and_objectives",
       "age_range"
@@ -1750,6 +1800,7 @@
     "countries": [
       "Pakistan"
     ],
+    "current_enrollment": 150000,
     "basic_cohort_attributes": [],
     "biosample": {
       "biosample_variables": [],
@@ -1782,6 +1833,7 @@
     "countries": [
       "Iran"
     ],
+    "current_enrollment": 180000,
     "basic_cohort_attributes": [
       "study_design",
       "location"
@@ -1817,6 +1869,7 @@
     "countries": [
       "USA"
     ],
+    "current_enrollment": 154907,
     "basic_cohort_attributes": [],
     "biosample": {
       "biosample_variables": [],
@@ -1851,6 +1904,7 @@
     "countries": [
       "Qatar"
     ],
+    "current_enrollment": 15000,
     "basic_cohort_attributes": [
       "data_collection_events",
       "genders_studied_in_cohort"
@@ -1886,6 +1940,7 @@
     "countries": [
       "Saudi Arabia"
     ],
+    "current_enrollment": 100000,
     "basic_cohort_attributes": [
       "num_participants"
     ],
@@ -1920,6 +1975,7 @@
     "countries": [
       "Saudi Arabia"
     ],
+    "current_enrollment": 2000,
     "basic_cohort_attributes": [
       "aims_and_objectives"
     ],
@@ -1957,6 +2013,7 @@
       "Shanghai",
       "China"
     ],
+    "current_enrollment": 136000,
     "basic_cohort_attributes": [
       "timeline"
     ],
@@ -1991,6 +2048,7 @@
     "countries": [
       "Singapore"
     ],
+    "current_enrollment": 10000,
     "basic_cohort_attributes": [],
     "biosample": {
       "biosample_variables": [],
@@ -2023,6 +2081,7 @@
       "Malaysia",
       "Sri Lanka"
     ],
+    "current_enrollment": 75000,
     "basic_cohort_attributes": [
       "age_range",
       "location"
@@ -2058,6 +2117,7 @@
     "countries": [
       "Taiwan"
     ],
+    "current_enrollment": 118548,
     "basic_cohort_attributes": [
       "genders_studied_in_cohort"
     ],
@@ -2088,6 +2148,7 @@
     "countries": [
       "USA"
     ],
+    "current_enrollment": 191105,
     "basic_cohort_attributes": [
       "location"
     ],
@@ -2126,6 +2187,7 @@
       "Scotland",
       "Wales"
     ],
+    "current_enrollment": 502713,
     "basic_cohort_attributes": [],
     "biosample": {
       "biosample_variables": [],
@@ -2160,6 +2222,7 @@
     "countries": [
       "UK"
     ],
+    "current_enrollment": 100000,
     "basic_cohort_attributes": [
       "study_design"
     ],
@@ -2196,6 +2259,7 @@
       "Wales",
       "Northern Ireland"
     ],
+    "current_enrollment": 202638,
     "basic_cohort_attributes": [
       "sexes_studied_in_cohort",
       "timeline"
@@ -2235,6 +2299,7 @@
     "countries": [
       "Austria"
     ],
+    "current_enrollment": 180000,
     "basic_cohort_attributes": [
       "num_participants"
     ],
@@ -2269,6 +2334,7 @@
     "countries": [
       "USA"
     ],
+    "current_enrollment": 161808,
     "basic_cohort_attributes": [
       "age_range",
       "timeline"

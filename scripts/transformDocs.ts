@@ -6,6 +6,7 @@ type MappingShape = {
   countries: string[];
   pi_lead?: string;
   website?: string;
+  current_enrollment: number;
   available_data_types?: {
     genomic_data: boolean;
     environmental_data: boolean;
@@ -34,6 +35,7 @@ type Raw = {
   countries?: string[];
   pi_lead?: string;
   website?: string;
+  current_enrollment?: number;
   available_data_types?: {
     genomic_data: boolean;
     environmental_data: boolean;
@@ -64,6 +66,7 @@ const toEsDocument = (raw: Raw, i: number): MappingShape => {
     const output = {
       cohort_name: raw.cohort_name,
       countries: raw.countries || [],
+      current_enrollment: raw.current_enrollment || 0,
       basic_cohort_attributes: Object.values(
         raw.basic_cohort_attributes || {}
       ).reduce<string[]>(

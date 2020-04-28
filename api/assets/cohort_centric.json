@@ -73,6 +73,9 @@
           "cohort_autocomplete"
         ]
       },
+      "current_enrollment": {
+        "type": "integer"
+      },
       "pi_lead": {
         "type": "keyword",
         "copy_to": [

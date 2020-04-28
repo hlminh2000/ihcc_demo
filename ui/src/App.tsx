@@ -41,7 +41,7 @@ function App() {
 
   const index = "cohort_centric";
   const graphqlField = "cohort";
-  const projectId = "demo_7";
+  const projectId = "demo_2";
 
   const client = new ApolloClient({
     uri: `${process.env.REACT_APP_ARRANGER_API}/${projectId}/graphql`,

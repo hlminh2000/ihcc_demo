@@ -136,6 +136,9 @@ const facetScroller = (collapsed: boolean) => css`
     border-left: none;
     padding: 0px;
     margin: 0px;
+    .textHighlight {
+      word-break: break-word;
+    }
     & .header {
       & .title-control {
         align-items: center;
@@ -281,7 +284,7 @@ type SQON = {};
 type CohortDocument = {
   cohort_name: string;
   countries: string[];
-  basic_cohort_attributes: string[];
+  current_enrollment: number;
   available_data_types: {
     biospecimens: boolean;
     environmental_data: boolean;
@@ -338,12 +341,9 @@ const customTableColumns = [
   {
     index: 3,
     content: {
-      accessor: "basic_cohort_attributes",
-      Header: "Enrollment Criteria",
+      accessor: "current_enrollment",
+      Header: "Current Enrollment",
       maxWidth: 200,
-      Cell: ({ original }: { original: CohortDocument }) => (
-        <>{original.basic_cohort_attributes.join(", ")}</>
-      ),
     },
   },
   {
@@ -459,6 +459,7 @@ const PageContent = (props: { sqon: SQON | null }) => {
   const onFacetCollapserClick = () => {
     setFacetPanelCollapsed(!facetPanelCollapsed);
   };
+  console.log("props: ", props);
   return (
     <div className={pageContainer}>
       <div className={facetPanelContainer(facetPanelCollapsed)}>
@@ -497,7 +498,12 @@ const PageContent = (props: { sqon: SQON | null }) => {
           )}
           <Charts sqon={props.sqon}></Charts>
           <div className={tableContainer}>
-            <Table {...props} customColumns={customTableColumns} />
+            <Table
+              {...props}
+              customColumns={customTableColumns}
+              alwaysSorted={[{ field: "cohort_name", order: "asc" }]}
+              defaultSorted={[{ field: "cohort_name", order: "asc" }]}
+            />
           </div>
         </div>
         <div className={`${footerStyle} ${bodyFooter}`}>
