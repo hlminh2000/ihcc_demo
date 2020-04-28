@@ -351,7 +351,6 @@ const customTableColumns = [
     content: {
       accessor: "available_data_types.genomic_data",
       resizable: false,
-      sortable: false,
       width: 70,
       Header: (
         <>
@@ -368,7 +367,6 @@ const customTableColumns = [
     content: {
       accessor: "available_data_types.environmental_data",
       resizable: false,
-      sortable: false,
       width: 100,
       Header: (
         <>
@@ -387,7 +385,6 @@ const customTableColumns = [
     content: {
       accessor: "available_data_types.biospecimens",
       resizable: false,
-      sortable: false,
       width: 90,
       Header: (
         <>
@@ -404,7 +401,6 @@ const customTableColumns = [
     content: {
       accessor: "available_data_types.phenotypic_clinical_data",
       resizable: false,
-      sortable: false,
       width: 60,
       Header: (
         <>
