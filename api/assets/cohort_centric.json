@@ -82,8 +82,21 @@
       "website": {
         "type": "keyword"
       },
-      "data_types": {
-        "type": "keyword"
+      "available_data_types": {
+        "properties": {
+          "genomic_data": {
+            "type": "boolean"
+          },
+          "environmental_data": {
+            "type": "boolean"
+          },
+          "biospecimens": {
+            "type": "boolean"
+          },
+          "phenotypic_clinical_data": {
+            "type": "boolean"
+          }
+        }
       },
       "basic_cohort_attributes": {
         "type": "keyword"
