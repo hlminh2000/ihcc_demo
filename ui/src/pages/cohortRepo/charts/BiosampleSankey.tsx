@@ -2,8 +2,7 @@ import React from "react";
 import { ResponsivePie } from "@nivo/pie";
 import { ResponsiveSankey } from "@nivo/sankey";
 import { css } from "emotion";
-import take from "lodash/take";
-import identity from "lodash/identity";
+import _ from "lodash";
 import uniqBy from "lodash/uniqBy";
 import orderBy from "lodash/orderBy";
 
@@ -67,56 +66,56 @@ export default ({ sqon }: { sqon: {} | null }) => {
       fetchPolicy: "network-only",
     }
   );
-  const topCohorts = take(
-    cohortsQueryData?.cohort.hits.edges
-      .map((cohort) => ({
-        name: cohort.node.cohort_name,
-        sampleCount: cohort.node.biosample.sample_types.length,
-      }))
-      .sort((a, b) => b.sampleCount - a.sampleCount),
-    5
-  );
+  const topCohorts = _(
+    cohortsQueryData?.cohort.hits.edges.map((cohort) => ({
+      name: cohort.node.cohort_name,
+      sampleCount: cohort.node.biosample.sample_types.length,
+    }))
+  )
+    .orderBy(["sampleCount", "name"])
+    .reverse()
+    .take(5)
+    .value();
   const isInTopCohortList = (cohortName: string) =>
     topCohorts.some(({ name }) => name === cohortName);
   const OTHER_COHORTS = "Other Cohorts";
-  const chartNodes: ChartData["nodes"] = orderBy(
-    uniqBy(
-      cohortsQueryData?.cohort.hits.edges.reduce((acc, { node }) => {
-        [
-          ...node.biosample.sample_types.map((bioSampleType) => ({
-            id: bioSampleType,
-          })),
-          isInTopCohortList(node.cohort_name) &&
-          node.biosample.sample_types.length
-            ? { id: node.cohort_name }
-            : { id: OTHER_COHORTS },
-        ].forEach((chartNode) => chartNode && acc.push(chartNode));
-        return acc;
-      }, [] as ChartData["nodes"]) || [],
-      "id"
-    ),
-    "id"
-  );
-  const chartLinks: ChartData["links"] = orderBy(
-    uniqBy(
-      cohortsQueryData?.cohort.hits.edges.reduce((acc, { node }) => {
-        node.biosample.sample_types
-          .map((sampleType) => ({
-            source: sampleType,
-            target:
-              isInTopCohortList(node.cohort_name) &&
-              node.biosample.sample_types.length
-                ? node.cohort_name
-                : OTHER_COHORTS,
-            value: 1 as 1,
-          }))
-          .forEach((chartNode) => acc.push(chartNode));
-        return acc;
-      }, [] as ChartData["links"]) || [],
-      (link) => `${link.source}_${link.target}`
-    ),
-    ["source", "target"]
-  );
+  const chartNodes: ChartData["nodes"] = _(
+    cohortsQueryData?.cohort.hits.edges.reduce((acc, { node }) => {
+      [
+        ...node.biosample.sample_types.map((bioSampleType) => ({
+          id: bioSampleType,
+        })),
+        isInTopCohortList(node.cohort_name) &&
+        node.biosample.sample_types.length
+          ? { id: node.cohort_name }
+          : { id: OTHER_COHORTS },
+      ].forEach((chartNode) => chartNode && acc.push(chartNode));
+      return acc;
+    }, [] as ChartData["nodes"]) || []
+  )
+    .uniqBy("id")
+    .orderBy("id")
+    .value();
+  const chartLinks: ChartData["links"] = _(
+    cohortsQueryData?.cohort.hits.edges.reduce((acc, { node }) => {
+      node.biosample.sample_types
+        .map((sampleType) => ({
+          source: sampleType,
+          target:
+            isInTopCohortList(node.cohort_name) &&
+            node.biosample.sample_types.length
+              ? node.cohort_name
+              : OTHER_COHORTS,
+          value: 1 as 1,
+        }))
+        .forEach((chartNode) => acc.push(chartNode));
+      return acc;
+    }, [] as ChartData["links"]) || []
+  )
+    .unionBy((link) => `${link.source}_${link.target}`)
+    .orderBy(["source", "target"])
+    .value();
+
   return (
     <div className={container(loading)}>
       {chartNodes.length && chartLinks.length && (
