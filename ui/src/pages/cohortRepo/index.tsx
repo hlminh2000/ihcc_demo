@@ -282,7 +282,12 @@ type CohortDocument = {
   cohort_name: string;
   countries: string[];
   basic_cohort_attributes: string[];
-  data_types: string[];
+  available_data_types: {
+    biospecimens: boolean;
+    environmental_data: boolean;
+    genomic_data: boolean;
+    phenotypic_clinical_data: boolean;
+  };
   pi_lead: string;
 };
 
@@ -344,7 +349,7 @@ const customTableColumns = [
   {
     index: 3,
     content: {
-      accessor: "data_types",
+      accessor: "available_data_types.genomic_data",
       resizable: false,
       sortable: false,
       width: 70,
@@ -354,16 +359,14 @@ const customTableColumns = [
         </>
       ),
       Cell: ({ original }: { original: CohortDocument }) => (
-        <BooleanCell
-          isTrue={original.data_types.some((type) => type === "Genomic Data")}
-        />
+        <BooleanCell isTrue={original.available_data_types.genomic_data} />
       ),
     },
   },
   {
     index: 3,
     content: {
-      accessor: "data_types",
+      accessor: "available_data_types.environmental_data",
       resizable: false,
       sortable: false,
       width: 100,
@@ -374,9 +377,7 @@ const customTableColumns = [
       ),
       Cell: ({ original }: { original: CohortDocument }) => (
         <BooleanCell
-          isTrue={original.data_types.some(
-            (type) => type === "Environmental Data"
-          )}
+          isTrue={original.available_data_types.environmental_data}
         />
       ),
     },
@@ -384,7 +385,7 @@ const customTableColumns = [
   {
     index: 3,
     content: {
-      accessor: "data_types",
+      accessor: "available_data_types.biospecimens",
       resizable: false,
       sortable: false,
       width: 90,
@@ -394,16 +395,14 @@ const customTableColumns = [
         </>
       ),
       Cell: ({ original }: { original: CohortDocument }) => (
-        <BooleanCell
-          isTrue={original.data_types.some((type) => type === "Biospecimens")}
-        />
+        <BooleanCell isTrue={original.available_data_types.biospecimens} />
       ),
     },
   },
   {
     index: 3,
     content: {
-      accessor: "data_types",
+      accessor: "available_data_types.phenotypic_clinical_data",
       resizable: false,
       sortable: false,
       width: 60,
@@ -414,9 +413,7 @@ const customTableColumns = [
       ),
       Cell: ({ original }: { original: CohortDocument }) => (
         <BooleanCell
-          isTrue={original.data_types.some(
-            (type) => type === "Phenotypic/Clinical Data"
-          )}
+          isTrue={original.available_data_types.phenotypic_clinical_data}
         />
       ),
     },

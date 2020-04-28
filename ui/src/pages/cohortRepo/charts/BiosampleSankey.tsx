@@ -5,6 +5,7 @@ import { css } from "emotion";
 import take from "lodash/take";
 import identity from "lodash/identity";
 import uniqBy from "lodash/uniqBy";
+import orderBy from "lodash/orderBy";
 
 import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
@@ -78,37 +79,43 @@ export default ({ sqon }: { sqon: {} | null }) => {
   const isInTopCohortList = (cohortName: string) =>
     topCohorts.some(({ name }) => name === cohortName);
   const OTHER_COHORTS = "Other Cohorts";
-  const chartNodes: ChartData["nodes"] = uniqBy(
-    cohortsQueryData?.cohort.hits.edges.reduce((acc, { node }) => {
-      [
-        ...node.biosample.sample_types.map((bioSampleType) => ({
-          id: bioSampleType,
-        })),
-        isInTopCohortList(node.cohort_name) &&
-        node.biosample.sample_types.length
-          ? { id: node.cohort_name }
-          : { id: OTHER_COHORTS },
-      ].forEach((chartNode) => chartNode && acc.push(chartNode));
-      return acc;
-    }, [] as ChartData["nodes"]) || [],
+  const chartNodes: ChartData["nodes"] = orderBy(
+    uniqBy(
+      cohortsQueryData?.cohort.hits.edges.reduce((acc, { node }) => {
+        [
+          ...node.biosample.sample_types.map((bioSampleType) => ({
+            id: bioSampleType,
+          })),
+          isInTopCohortList(node.cohort_name) &&
+          node.biosample.sample_types.length
+            ? { id: node.cohort_name }
+            : { id: OTHER_COHORTS },
+        ].forEach((chartNode) => chartNode && acc.push(chartNode));
+        return acc;
+      }, [] as ChartData["nodes"]) || [],
+      "id"
+    ),
     "id"
   );
-  const chartLinks: ChartData["links"] = uniqBy(
-    cohortsQueryData?.cohort.hits.edges.reduce((acc, { node }) => {
-      node.biosample.sample_types
-        .map((sampleType) => ({
-          source: sampleType,
-          target:
-            isInTopCohortList(node.cohort_name) &&
-            node.biosample.sample_types.length
-              ? node.cohort_name
-              : OTHER_COHORTS,
-          value: 1 as 1,
-        }))
-        .forEach((chartNode) => acc.push(chartNode));
-      return acc;
-    }, [] as ChartData["links"]) || [],
-    (link) => `${link.source}_${link.target}`
+  const chartLinks: ChartData["links"] = orderBy(
+    uniqBy(
+      cohortsQueryData?.cohort.hits.edges.reduce((acc, { node }) => {
+        node.biosample.sample_types
+          .map((sampleType) => ({
+            source: sampleType,
+            target:
+              isInTopCohortList(node.cohort_name) &&
+              node.biosample.sample_types.length
+                ? node.cohort_name
+                : OTHER_COHORTS,
+            value: 1 as 1,
+          }))
+          .forEach((chartNode) => acc.push(chartNode));
+        return acc;
+      }, [] as ChartData["links"]) || [],
+      (link) => `${link.source}_${link.target}`
+    ),
+    ["source", "target"]
   );
   return (
     <div className={container(loading)}>

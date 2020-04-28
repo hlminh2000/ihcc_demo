@@ -3,6 +3,7 @@ import { ResponsiveBar } from "@nivo/bar";
 
 import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
+import _ from "lodash";
 
 type ChartData = { country: string; cohorts: number }[];
 
@@ -32,22 +33,32 @@ export default ({ sqon }: { sqon: {} | null }) => {
     `,
     {
       variables: {
-        sqon: sqon
+        sqon: sqon,
       },
-      fetchPolicy: "network-only"
+      fetchPolicy: "network-only",
     }
   );
-  const chartData: ChartData =
+  const rawChartData: ChartData =
     data?.cohort.aggregations.countries.buckets.map(({ key, doc_count }) => ({
       cohorts: doc_count,
-      country: key
+      country: key,
     })) || [];
+  const topGroup = _(rawChartData).orderBy("doc_count").take(20).value();
+  const remaining = _(rawChartData)
+    .difference(topGroup)
+    .reduce((acc, bucket) => ({
+      country: "other",
+      cohorts: acc.cohorts + bucket.cohorts,
+    }));
   return (
     <ResponsiveBar
-      data={chartData}
+      data={_(remaining ? [...topGroup, remaining] : topGroup)
+        .orderBy("cohorts")
+        .reverse()
+        .value()}
       keys={["cohorts"]}
       indexBy="country"
-      margin={{ top: 10, right: 0, bottom: 40, left: 0 }}
+      margin={{ top: 10, right: 0, bottom: 80, left: 0 }}
       padding={0.3}
       colors={["#47a8bd"]}
       enableGridY={false}
@@ -59,7 +70,7 @@ export default ({ sqon }: { sqon: {} | null }) => {
           color: "#38bcb2",
           size: 4,
           padding: 1,
-          stagger: true
+          stagger: true,
         },
         {
           id: "lines",
@@ -68,8 +79,8 @@ export default ({ sqon }: { sqon: {} | null }) => {
           color: "#eed312",
           rotation: -45,
           lineWidth: 6,
-          spacing: 10
-        }
+          spacing: 10,
+        },
       ]}
       borderColor={{ from: "color", modifiers: [["darker", 1.6]] }}
       axisTop={null}
@@ -77,9 +88,9 @@ export default ({ sqon }: { sqon: {} | null }) => {
       axisBottom={{
         tickSize: 5,
         tickPadding: 5,
-        tickRotation: 0,
+        tickRotation: 45,
         legendPosition: "middle",
-        legendOffset: 32
+        legendOffset: 32,
       }}
       axisLeft={null}
       labelSkipWidth={12}
@@ -103,11 +114,11 @@ export default ({ sqon }: { sqon: {} | null }) => {
             {
               on: "hover",
               style: {
-                itemOpacity: 1
-              }
-            }
-          ]
-        }
+                itemOpacity: 1,
+              },
+            },
+          ],
+        },
       ]}
       animate={true}
       motionStiffness={90}
