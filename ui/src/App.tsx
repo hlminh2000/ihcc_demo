@@ -30,6 +30,7 @@ function App() {
     background: white;
     border-bottom: solid 2px #dcdde1;
     width: 100%;
+    justify-content: space-between;
   `;
   const logoStyle = css`
     width: 142px;
@@ -51,8 +52,24 @@ function App() {
     <ApolloProvider client={client}>
       <div className={fullView}>
         <div className={headerStyle}>
-          <img src={logo} className={logoStyle}></img>
-          International HundredK+ Cohorts Consortium
+          <div
+            className={css`
+              display: flex;
+              align-items: center;
+            `}
+          >
+            <img src={logo} className={logoStyle}></img>
+            International HundredK+ Cohorts Consortium
+          </div>
+          <div
+            className={css`
+              text-align: right;
+              margin-right: 10px;
+              color: black;
+            `}
+          >
+            IHCC Cohort Atlas
+          </div>
         </div>
         <div className={pageContainer}>
           <Router history={customHistory}>

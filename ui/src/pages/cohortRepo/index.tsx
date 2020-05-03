@@ -7,6 +7,7 @@ import websiteIcon from "./website.svg";
 import arrow from "./arrow-right@2x.png";
 import checkmark from "./check.svg";
 import Xmark from "./X.svg";
+import overture_logo from "./overture.svg";
 
 import Charts from "./charts";
 import {
@@ -233,7 +234,7 @@ const footerLink = css`
   color: #47478d;
 `;
 const sponsorLogo = css`
-  width: 180px;
+  width: 100px;
 `;
 const chevronLeft = css`
   width: 10px;
@@ -508,8 +509,18 @@ const PageContent = (props: { sqon: SQON | null }) => {
         </div>
         <div className={`${footerStyle} ${bodyFooter}`}>
           <div className={footerSponsor}>
-            Sponsored by
-            <img className={sponsorLogo} src={GGMC_logo}></img>
+            Sponsored by <img className={sponsorLogo} src={GGMC_logo} />
+          </div>
+          <div className={footerSponsor}>
+            Powered by{" "}
+            <a href="https://www.overture.bio/" target="_blank">
+              <img
+                className={`${sponsorLogo} ${css`
+                  padding-left: 5px;
+                `}`}
+                src={overture_logo}
+              />
+            </a>
           </div>
           <div>
             <a href="/" className={footerLink}>
