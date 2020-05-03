@@ -31,7 +31,7 @@
         "tobacco"
       ],
       "physiological_measurements": [
-        "blood_pressure"
+        "blood pressure"
       ]
     },
     "website": "https://dceg2.cancer.gov/gemshare/"
@@ -50,7 +50,8 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "urine"
+        "urine",
+        "stool"
       ]
     },
     "available_data_types": {
@@ -62,7 +63,7 @@
     "laboratory_measures": {
       "genomic_variables": [],
       "microbiology": [
-        "microbial_data"
+        "microbial data"
       ]
     },
     "pi_lead": "Sung Soo Kim",
@@ -71,7 +72,7 @@
       "lifestyle_and_behaviours": [],
       "physiological_measurements": [
         "weight",
-        "heart_rate"
+        "heart rate"
       ]
     },
     "website": "http://www.nih.go.kr/NIH/eng/contents/NihEngContentView.jsp?cid=65199&menuIds=HOME004-MNU2261-MNU2262-MNU2263-MNU2264"
@@ -85,7 +86,9 @@
     "basic_cohort_attributes": [],
     "biosample": {
       "biosample_variables": [],
-      "sample_types": []
+      "sample_types": [
+        "blood"
+      ]
     },
     "available_data_types": {
       "genomic_data": true,
@@ -118,7 +121,11 @@
     "basic_cohort_attributes": [],
     "biosample": {
       "biosample_variables": [],
-      "sample_types": []
+      "sample_types": [
+        "stool",
+        "blood",
+        "urine"
+      ]
     },
     "available_data_types": {
       "genomic_data": false,
@@ -150,7 +157,9 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "urine"
+        "urine",
+        "blood",
+        "saliva"
       ]
     },
     "available_data_types": {
@@ -171,7 +180,7 @@
       ],
       "physiological_measurements": [
         "weight",
-        "heart_rate"
+        "heart rate"
       ]
     },
     "website": "https://www.ahri.org"
@@ -185,7 +194,10 @@
     "basic_cohort_attributes": [],
     "biosample": {
       "biosample_variables": [],
-      "sample_types": []
+      "sample_types": [
+        "urine",
+        "stool"
+      ]
     },
     "available_data_types": {
       "genomic_data": true,
@@ -212,11 +224,13 @@
     ],
     "current_enrollment": 267153,
     "basic_cohort_attributes": [
-      "aims_and_objectives"
+      "aims and objectives"
     ],
     "biosample": {
       "biosample_variables": [],
-      "sample_types": []
+      "sample_types": [
+        "stool"
+      ]
     },
     "available_data_types": {
       "genomic_data": true,
@@ -247,11 +261,14 @@
     ],
     "current_enrollment": 812073,
     "basic_cohort_attributes": [
-      "study_design"
+      "study design"
     ],
     "biosample": {
       "biosample_variables": [],
-      "sample_types": []
+      "sample_types": [
+        "blood",
+        "urine"
+      ]
     },
     "available_data_types": {
       "genomic_data": true,
@@ -262,7 +279,7 @@
     "laboratory_measures": {
       "genomic_variables": [],
       "microbiology": [
-        "biosample_source_anatomical_location"
+        "biosample source anatomical location"
       ]
     },
     "pi_lead": "Goran Walldius",
@@ -284,7 +301,10 @@
     "basic_cohort_attributes": [],
     "biosample": {
       "biosample_variables": [],
-      "sample_types": []
+      "sample_types": [
+        "urine",
+        "saliva"
+      ]
     },
     "available_data_types": {
       "genomic_data": true,
@@ -320,7 +340,8 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "urine"
+        "urine",
+        "stool"
       ]
     },
     "available_data_types": {
@@ -354,12 +375,14 @@
     ],
     "current_enrollment": 315000,
     "basic_cohort_attributes": [
-      "aims_and_objectives",
-      "age_range"
+      "aims and objectives",
+      "age range"
     ],
     "biosample": {
       "biosample_variables": [],
-      "sample_types": []
+      "sample_types": [
+        "stool"
+      ]
     },
     "available_data_types": {
       "genomic_data": true,
@@ -374,7 +397,7 @@
     "pi_lead": "Philip Awadalla",
     "questionnaire_survey_data": {
       "socio_demographic_and_economic_characteristics": [
-        "age_birthdate"
+        "age birthdate"
       ],
       "lifestyle_and_behaviours": [],
       "physiological_measurements": []
@@ -388,11 +411,13 @@
     ],
     "current_enrollment": 1185106,
     "basic_cohort_attributes": [
-      "aims_and_objectives"
+      "aims and objectives"
     ],
     "biosample": {
       "biosample_variables": [],
-      "sample_types": []
+      "sample_types": [
+        "blood"
+      ]
     },
     "available_data_types": {
       "genomic_data": true,
@@ -426,7 +451,8 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "stool"
+        "stool",
+        "urine"
       ]
     },
     "available_data_types": {
@@ -438,7 +464,7 @@
     "laboratory_measures": {
       "genomic_variables": [],
       "microbiology": [
-        "microbial_data"
+        "microbial data"
       ]
     },
     "pi_lead": "Susan Gapstur",
@@ -446,7 +472,7 @@
       "socio_demographic_and_economic_characteristics": [],
       "lifestyle_and_behaviours": [],
       "physiological_measurements": [
-        "blood_pressure"
+        "blood pressure"
       ]
     },
     "website": "http://www.cancer.org/research/researchtopreventcancer/currentcancerpreventionstudies/cancer-prevention-study"
@@ -463,12 +489,14 @@
     ],
     "current_enrollment": 500000,
     "basic_cohort_attributes": [
-      "study_design",
-      "genders_studied_in_cohort"
+      "study design",
+      "genders studied in cohort"
     ],
     "biosample": {
       "biosample_variables": [],
-      "sample_types": []
+      "sample_types": [
+        "blood"
+      ]
     },
     "available_data_types": {
       "genomic_data": true,
@@ -483,10 +511,10 @@
     "pi_lead": "Hakon Hakonarson",
     "questionnaire_survey_data": {
       "socio_demographic_and_economic_characteristics": [
-        "ethnicity_race"
+        "ethnicity race"
       ],
       "lifestyle_and_behaviours": [
-        "physical_activity"
+        "physical activity"
       ],
       "physiological_measurements": []
     },
@@ -504,7 +532,8 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "stool"
+        "stool",
+        "blood"
       ]
     },
     "available_data_types": {
@@ -520,7 +549,7 @@
     "pi_lead": "Zhengming Chen and Liming Li",
     "questionnaire_survey_data": {
       "socio_demographic_and_economic_characteristics": [
-        "ethnicity_race"
+        "ethnicity race"
       ],
       "lifestyle_and_behaviours": [],
       "physiological_measurements": []
@@ -534,12 +563,15 @@
     ],
     "current_enrollment": 2000000,
     "basic_cohort_attributes": [
-      "age_range",
+      "age range",
       "location"
     ],
     "biosample": {
       "biosample_variables": [],
-      "sample_types": []
+      "sample_types": [
+        "blood",
+        "urine"
+      ]
     },
     "available_data_types": {
       "genomic_data": false,
@@ -574,7 +606,10 @@
     ],
     "biosample": {
       "biosample_variables": [],
-      "sample_types": []
+      "sample_types": [
+        "stool",
+        "urine"
+      ]
     },
     "available_data_types": {
       "genomic_data": true,
@@ -596,7 +631,7 @@
       ],
       "physiological_measurements": [
         "weight",
-        "blood_pressure"
+        "blood pressure"
       ]
     },
     "website": "http://www.constances.fr/index_EN.php"
@@ -608,12 +643,15 @@
     ],
     "current_enrollment": 198028,
     "basic_cohort_attributes": [
-      "genders_studied_in_cohort"
+      "genders studied in cohort"
     ],
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "saliva"
+        "saliva",
+        "blood",
+        "urine",
+        "stool"
       ]
     },
     "available_data_types": {
@@ -645,7 +683,9 @@
     "basic_cohort_attributes": [],
     "biosample": {
       "biosample_variables": [],
-      "sample_types": []
+      "sample_types": [
+        "urine"
+      ]
     },
     "available_data_types": {
       "genomic_data": true,
@@ -660,10 +700,10 @@
     "pi_lead": "David van Heel",
     "questionnaire_survey_data": {
       "socio_demographic_and_economic_characteristics": [
-        "family_and_household_structure"
+        "family and household structure"
       ],
       "lifestyle_and_behaviours": [
-        "physical_activity"
+        "physical activity"
       ],
       "physiological_measurements": []
     },
@@ -676,7 +716,7 @@
     ],
     "current_enrollment": 15105,
     "basic_cohort_attributes": [
-      "study_design"
+      "study design"
     ],
     "biosample": {
       "biosample_variables": [],
@@ -699,7 +739,7 @@
       "socio_demographic_and_economic_characteristics": [],
       "lifestyle_and_behaviours": [],
       "physiological_measurements": [
-        "blood_pressure"
+        "blood pressure"
       ]
     },
     "website": "www.elsa.org.br"
@@ -711,12 +751,16 @@
     ],
     "current_enrollment": 0,
     "basic_cohort_attributes": [
-      "data_collection_events",
+      "data collection events",
       "location"
     ],
     "biosample": {
       "biosample_variables": [],
-      "sample_types": []
+      "sample_types": [
+        "saliva",
+        "urine",
+        "stool"
+      ]
     },
     "available_data_types": {
       "genomic_data": true,
@@ -733,7 +777,7 @@
       "socio_demographic_and_economic_characteristics": [],
       "lifestyle_and_behaviours": [],
       "physiological_measurements": [
-        "blood_pressure"
+        "blood pressure"
       ]
     },
     "website": "https://www.nih.gov/echo"
@@ -757,7 +801,8 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "blood"
+        "blood",
+        "urine"
       ]
     },
     "available_data_types": {
@@ -789,12 +834,13 @@
     ],
     "current_enrollment": 25000,
     "basic_cohort_attributes": [
-      "criteria_for_enrollment_and_recruitment_procedures"
+      "criteria for enrollment and recruitment procedures"
     ],
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "urine"
+        "urine",
+        "stool"
       ]
     },
     "available_data_types": {
@@ -807,7 +853,7 @@
       "genomic_variables": [],
       "microbiology": []
     },
-    "pi_lead": "Lars Lind and S√∂lve Elmst√•lh",
+    "pi_lead": "Lars Lind and Sölve Elmstålh",
     "questionnaire_survey_data": {
       "socio_demographic_and_economic_characteristics": [
         "gender"
@@ -828,13 +874,14 @@
     ],
     "current_enrollment": 200000,
     "basic_cohort_attributes": [
-      "data_collection_events",
-      "sexes_studied_in_cohort"
+      "data collection events",
+      "sexes studied in cohort"
     ],
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "stool"
+        "stool",
+        "saliva"
       ]
     },
     "available_data_types": {
@@ -864,7 +911,11 @@
     "basic_cohort_attributes": [],
     "biosample": {
       "biosample_variables": [],
-      "sample_types": []
+      "sample_types": [
+        "saliva",
+        "stool",
+        "blood"
+      ]
     },
     "available_data_types": {
       "genomic_data": true,
@@ -875,17 +926,17 @@
     "laboratory_measures": {
       "genomic_variables": [],
       "microbiology": [
-        "microbial_data"
+        "microbial data"
       ]
     },
-    "pi_lead": "Helj√§-Marja Surcel",
+    "pi_lead": "Heljä-Marja Surcel",
     "questionnaire_survey_data": {
       "socio_demographic_and_economic_characteristics": [],
       "lifestyle_and_behaviours": [
         "tobacco"
       ],
       "physiological_measurements": [
-        "blood_pressure"
+        "blood pressure"
       ]
     },
     "website": "www.esis.fi"
@@ -902,12 +953,14 @@
     ],
     "current_enrollment": 113000,
     "basic_cohort_attributes": [
-      "genders_studied_in_cohort"
+      "genders studied in cohort"
     ],
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "saliva"
+        "saliva",
+        "urine",
+        "stool"
       ]
     },
     "available_data_types": {
@@ -925,7 +978,7 @@
       "socio_demographic_and_economic_characteristics": [],
       "lifestyle_and_behaviours": [],
       "physiological_measurements": [
-        "heart_rate"
+        "heart rate"
       ]
     },
     "website": "http://www.breakthroughgenerations.org.uk/home"
@@ -937,11 +990,15 @@
     ],
     "current_enrollment": 35000,
     "basic_cohort_attributes": [
-      "age_range"
+      "age range"
     ],
     "biosample": {
       "biosample_variables": [],
-      "sample_types": []
+      "sample_types": [
+        "blood",
+        "stool",
+        "saliva"
+      ]
     },
     "available_data_types": {
       "genomic_data": true,
@@ -974,7 +1031,10 @@
     ],
     "biosample": {
       "biosample_variables": [],
-      "sample_types": []
+      "sample_types": [
+        "blood",
+        "stool"
+      ]
     },
     "available_data_types": {
       "genomic_data": true,
@@ -985,7 +1045,7 @@
     "laboratory_measures": {
       "genomic_variables": [],
       "microbiology": [
-        "biosample_source_anatomical_location"
+        "biosample source anatomical location"
       ]
     },
     "pi_lead": "Gad Rennert",
@@ -1009,7 +1069,9 @@
     ],
     "biosample": {
       "biosample_variables": [],
-      "sample_types": []
+      "sample_types": [
+        "blood"
+      ]
     },
     "available_data_types": {
       "genomic_data": true,
@@ -1042,7 +1104,10 @@
     "basic_cohort_attributes": [],
     "biosample": {
       "biosample_variables": [],
-      "sample_types": []
+      "sample_types": [
+        "stool",
+        "blood"
+      ]
     },
     "available_data_types": {
       "genomic_data": false,
@@ -1074,7 +1139,8 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "saliva"
+        "saliva",
+        "urine"
       ]
     },
     "available_data_types": {
@@ -1090,13 +1156,13 @@
     "pi_lead": "Catherine Schaefer",
     "questionnaire_survey_data": {
       "socio_demographic_and_economic_characteristics": [
-        "ethnicity_race"
+        "ethnicity race"
       ],
       "lifestyle_and_behaviours": [
         "sleep"
       ],
       "physiological_measurements": [
-        "heart_rate"
+        "heart rate"
       ]
     },
     "website": "http://www.dor.kaiser.org/external/DORExternal/rpgeh/index.aspx"
@@ -1104,12 +1170,12 @@
   {
     "cohort_name": "Korea Biobank Project",
     "countries": [
-      "Republic of Korea"
+      "South Korea"
     ],
     "current_enrollment": 830000,
     "basic_cohort_attributes": [
-      "sexes_studied_in_cohort",
-      "num_participants"
+      "sexes studied in cohort",
+      "num participants"
     ],
     "biosample": {
       "biosample_variables": [],
@@ -1142,17 +1208,18 @@
   {
     "cohort_name": "Korean Cancer Prevention Study (KCPS-II Biobank)",
     "countries": [
-      "Korea"
+      "South Korea"
     ],
     "current_enrollment": 156701,
     "basic_cohort_attributes": [
       "timeline",
-      "num_participants"
+      "num participants"
     ],
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "blood"
+        "blood",
+        "urine"
       ]
     },
     "available_data_types": {
@@ -1182,13 +1249,14 @@
     ],
     "current_enrollment": 51300,
     "basic_cohort_attributes": [
-      "study_design",
-      "sexes_studied_in_cohort"
+      "study design",
+      "sexes studied in cohort"
     ],
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "urine"
+        "urine",
+        "blood"
       ]
     },
     "available_data_types": {
@@ -1205,7 +1273,7 @@
     "questionnaire_survey_data": {
       "socio_demographic_and_economic_characteristics": [],
       "lifestyle_and_behaviours": [
-        "physical_activity"
+        "physical activity"
       ],
       "physiological_measurements": []
     },
@@ -1220,12 +1288,13 @@
     ],
     "current_enrollment": 235000,
     "basic_cohort_attributes": [
-      "data_collection_events"
+      "data collection events"
     ],
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "saliva"
+        "saliva",
+        "stool"
       ]
     },
     "available_data_types": {
@@ -1237,7 +1306,7 @@
     "laboratory_measures": {
       "genomic_variables": [],
       "microbiology": [
-        "microbial_data"
+        "microbial data"
       ]
     },
     "pi_lead": "Terrence Simmons",
@@ -1261,7 +1330,9 @@
     "basic_cohort_attributes": [],
     "biosample": {
       "biosample_variables": [],
-      "sample_types": []
+      "sample_types": [
+        "stool"
+      ]
     },
     "available_data_types": {
       "genomic_data": true,
@@ -1294,7 +1365,10 @@
     "basic_cohort_attributes": [],
     "biosample": {
       "biosample_variables": [],
-      "sample_types": []
+      "sample_types": [
+        "stool",
+        "saliva"
+      ]
     },
     "available_data_types": {
       "genomic_data": true,
@@ -1323,12 +1397,15 @@
     ],
     "current_enrollment": 159755,
     "basic_cohort_attributes": [
-      "genders_studied_in_cohort",
-      "criteria_for_enrollment_and_recruitment_procedures"
+      "genders studied in cohort",
+      "criteria for enrollment and recruitment procedures"
     ],
     "biosample": {
       "biosample_variables": [],
-      "sample_types": []
+      "sample_types": [
+        "saliva",
+        "blood"
+      ]
     },
     "available_data_types": {
       "genomic_data": false,
@@ -1359,12 +1436,14 @@
     ],
     "current_enrollment": 785000,
     "basic_cohort_attributes": [
-      "aims_and_objectives",
-      "num_participants"
+      "aims and objectives",
+      "num participants"
     ],
     "biosample": {
       "biosample_variables": [],
-      "sample_types": []
+      "sample_types": [
+        "blood"
+      ]
     },
     "available_data_types": {
       "genomic_data": true,
@@ -1401,7 +1480,8 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "urine"
+        "urine",
+        "stool"
       ]
     },
     "available_data_types": {
@@ -1419,7 +1499,7 @@
       "socio_demographic_and_economic_characteristics": [],
       "lifestyle_and_behaviours": [],
       "physiological_measurements": [
-        "heart_rate"
+        "heart rate"
       ]
     },
     "website": "http://www.millionwomenstudy.org/introduction/"
@@ -1431,12 +1511,13 @@
     ],
     "current_enrollment": 215251,
     "basic_cohort_attributes": [
-      "data_collection_events"
+      "data collection events"
     ],
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "urine"
+        "urine",
+        "blood"
       ]
     },
     "available_data_types": {
@@ -1473,7 +1554,9 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "urine"
+        "urine",
+        "stool",
+        "saliva"
       ]
     },
     "available_data_types": {
@@ -1485,7 +1568,7 @@
     "laboratory_measures": {
       "genomic_variables": [],
       "microbiology": [
-        "biosample_source_anatomical_location"
+        "biosample source anatomical location"
       ]
     },
     "pi_lead": "David H Ledbetter",
@@ -1509,12 +1592,15 @@
     ],
     "current_enrollment": 275000,
     "basic_cohort_attributes": [
-      "genders_studied_in_cohort",
-      "num_participants"
+      "genders studied in cohort",
+      "num participants"
     ],
     "biosample": {
       "biosample_variables": [],
-      "sample_types": []
+      "sample_types": [
+        "urine",
+        "stool"
+      ]
     },
     "available_data_types": {
       "genomic_data": true,
@@ -1529,7 +1615,7 @@
     "pi_lead": "Dorret Boomsma",
     "questionnaire_survey_data": {
       "socio_demographic_and_economic_characteristics": [
-        "biological_sex"
+        "biological sex"
       ],
       "lifestyle_and_behaviours": [
         "alcohol"
@@ -1560,13 +1646,13 @@
     "laboratory_measures": {
       "genomic_variables": [],
       "microbiology": [
-        "microbial_data"
+        "microbial data"
       ]
     },
     "pi_lead": "Michael Phillips",
     "questionnaire_survey_data": {
       "socio_demographic_and_economic_characteristics": [
-        "age_birthdate"
+        "age birthdate"
       ],
       "lifestyle_and_behaviours": [
         "nutrition"
@@ -1584,7 +1670,11 @@
     "basic_cohort_attributes": [],
     "biosample": {
       "biosample_variables": [],
-      "sample_types": []
+      "sample_types": [
+        "stool",
+        "blood",
+        "urine"
+      ]
     },
     "available_data_types": {
       "genomic_data": true,
@@ -1599,7 +1689,7 @@
     "pi_lead": "Meir Stampfer, Rulla Tamimi",
     "questionnaire_survey_data": {
       "socio_demographic_and_economic_characteristics": [
-        "ethnicity_race"
+        "ethnicity race"
       ],
       "lifestyle_and_behaviours": [
         "tobacco"
@@ -1617,7 +1707,9 @@
     "basic_cohort_attributes": [],
     "biosample": {
       "biosample_variables": [],
-      "sample_types": []
+      "sample_types": [
+        "urine"
+      ]
     },
     "available_data_types": {
       "genomic_data": true,
@@ -1632,11 +1724,11 @@
     "pi_lead": "Walter Willett, Heather Eliassen",
     "questionnaire_survey_data": {
       "socio_demographic_and_economic_characteristics": [
-        "ethnicity_race"
+        "ethnicity race"
       ],
       "lifestyle_and_behaviours": [],
       "physiological_measurements": [
-        "blood_pressure"
+        "blood pressure"
       ]
     },
     "website": "www.nurseshealthstudy.org"
@@ -1651,7 +1743,8 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "urine"
+        "urine",
+        "stool"
       ]
     },
     "available_data_types": {
@@ -1673,7 +1766,7 @@
         "alcohol"
       ],
       "physiological_measurements": [
-        "heart_rate"
+        "heart rate"
       ]
     },
     "website": ""
@@ -1685,12 +1778,15 @@
     ],
     "current_enrollment": 135000,
     "basic_cohort_attributes": [
-      "sexes_studied_in_cohort",
+      "sexes studied in cohort",
       "timeline"
     ],
     "biosample": {
       "biosample_variables": [],
-      "sample_types": []
+      "sample_types": [
+        "blood",
+        "stool"
+      ]
     },
     "available_data_types": {
       "genomic_data": true,
@@ -1705,10 +1801,10 @@
     "pi_lead": "Beatrice Melin",
     "questionnaire_survey_data": {
       "socio_demographic_and_economic_characteristics": [
-        "biological_sex"
+        "biological sex"
       ],
       "lifestyle_and_behaviours": [
-        "physical_activity"
+        "physical activity"
       ],
       "physiological_measurements": []
     },
@@ -1721,12 +1817,13 @@
     ],
     "current_enrollment": 5266270,
     "basic_cohort_attributes": [
-      "num_participants"
+      "num participants"
     ],
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "blood"
+        "blood",
+        "stool"
       ]
     },
     "available_data_types": {
@@ -1738,17 +1835,17 @@
     "laboratory_measures": {
       "genomic_variables": [],
       "microbiology": [
-        "biosample_source_anatomical_location"
+        "biosample source anatomical location"
       ]
     },
-    "pi_lead": "√òyvind N√¶ss",
+    "pi_lead": "Oyvind Naess",
     "questionnaire_survey_data": {
       "socio_demographic_and_economic_characteristics": [
-        "ethnicity_race"
+        "ethnicity race"
       ],
       "lifestyle_and_behaviours": [],
       "physiological_measurements": [
-        "heart_rate"
+        "heart rate"
       ]
     },
     "website": ""
@@ -1760,13 +1857,14 @@
     ],
     "current_enrollment": 284000,
     "basic_cohort_attributes": [
-      "aims_and_objectives",
-      "age_range"
+      "aims and objectives",
+      "age range"
     ],
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "saliva"
+        "saliva",
+        "stool"
       ]
     },
     "available_data_types": {
@@ -1778,13 +1876,13 @@
     "laboratory_measures": {
       "genomic_variables": [],
       "microbiology": [
-        "biosample_source_anatomical_location"
+        "biosample source anatomical location"
       ]
     },
     "pi_lead": "Per Magnus",
     "questionnaire_survey_data": {
       "socio_demographic_and_economic_characteristics": [
-        "ethnicity_race"
+        "ethnicity race"
       ],
       "lifestyle_and_behaviours": [
         "sleep"
@@ -1804,7 +1902,10 @@
     "basic_cohort_attributes": [],
     "biosample": {
       "biosample_variables": [],
-      "sample_types": []
+      "sample_types": [
+        "saliva",
+        "blood"
+      ]
     },
     "available_data_types": {
       "genomic_data": true,
@@ -1835,13 +1936,14 @@
     ],
     "current_enrollment": 180000,
     "basic_cohort_attributes": [
-      "study_design",
+      "study design",
       "location"
     ],
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "stool"
+        "stool",
+        "saliva"
       ]
     },
     "available_data_types": {
@@ -1857,7 +1959,7 @@
     "pi_lead": "Reza Malekzadeh,  Hossein Poustchi,  Farin Kamangar,  Arash Etemadi",
     "questionnaire_survey_data": {
       "socio_demographic_and_economic_characteristics": [
-        "ethnicity_race"
+        "ethnicity race"
       ],
       "lifestyle_and_behaviours": [],
       "physiological_measurements": []
@@ -1873,7 +1975,10 @@
     "basic_cohort_attributes": [],
     "biosample": {
       "biosample_variables": [],
-      "sample_types": []
+      "sample_types": [
+        "urine",
+        "stool"
+      ]
     },
     "available_data_types": {
       "genomic_data": true,
@@ -1906,12 +2011,14 @@
     ],
     "current_enrollment": 15000,
     "basic_cohort_attributes": [
-      "data_collection_events",
-      "genders_studied_in_cohort"
+      "data collection events",
+      "genders studied in cohort"
     ],
     "biosample": {
       "biosample_variables": [],
-      "sample_types": []
+      "sample_types": [
+        "stool"
+      ]
     },
     "available_data_types": {
       "genomic_data": false,
@@ -1922,14 +2029,14 @@
     "laboratory_measures": {
       "genomic_variables": [],
       "microbiology": [
-        "biosample_source_anatomical_location"
+        "biosample source anatomical location"
       ]
     },
     "pi_lead": "Hamdi Mbarek",
     "questionnaire_survey_data": {
       "socio_demographic_and_economic_characteristics": [],
       "lifestyle_and_behaviours": [
-        "physical_activity"
+        "physical activity"
       ],
       "physiological_measurements": []
     },
@@ -1942,11 +2049,15 @@
     ],
     "current_enrollment": 100000,
     "basic_cohort_attributes": [
-      "num_participants"
+      "num participants"
     ],
     "biosample": {
       "biosample_variables": [],
-      "sample_types": []
+      "sample_types": [
+        "urine",
+        "blood",
+        "stool"
+      ]
     },
     "available_data_types": {
       "genomic_data": false,
@@ -1961,7 +2072,7 @@
     "pi_lead": "Sultan AlSudiri and Malak Abedalthagafi",
     "questionnaire_survey_data": {
       "socio_demographic_and_economic_characteristics": [
-        "ethnicity_race"
+        "ethnicity race"
       ],
       "lifestyle_and_behaviours": [
         "alcohol"
@@ -1977,12 +2088,13 @@
     ],
     "current_enrollment": 2000,
     "basic_cohort_attributes": [
-      "aims_and_objectives"
+      "aims and objectives"
     ],
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "urine"
+        "urine",
+        "saliva"
       ]
     },
     "available_data_types": {
@@ -1999,10 +2111,10 @@
     "questionnaire_survey_data": {
       "socio_demographic_and_economic_characteristics": [],
       "lifestyle_and_behaviours": [
-        "physical_activity"
+        "physical activity"
       ],
       "physiological_measurements": [
-        "blood_pressure"
+        "blood pressure"
       ]
     },
     "website": "http://www.ksau-hs.edu.sa/English/Research/Pages/KAIMRC.aspx"
@@ -2019,7 +2131,9 @@
     ],
     "biosample": {
       "biosample_variables": [],
-      "sample_types": []
+      "sample_types": [
+        "stool"
+      ]
     },
     "available_data_types": {
       "genomic_data": false,
@@ -2052,7 +2166,10 @@
     "basic_cohort_attributes": [],
     "biosample": {
       "biosample_variables": [],
-      "sample_types": []
+      "sample_types": [
+        "urine",
+        "blood"
+      ]
     },
     "available_data_types": {
       "genomic_data": true,
@@ -2067,7 +2184,7 @@
     "pi_lead": "Patrick Tan and E Shyong Tai",
     "questionnaire_survey_data": {
       "socio_demographic_and_economic_characteristics": [
-        "ethnicity_race"
+        "ethnicity race"
       ],
       "lifestyle_and_behaviours": [],
       "physiological_measurements": []
@@ -2083,12 +2200,14 @@
     ],
     "current_enrollment": 75000,
     "basic_cohort_attributes": [
-      "age_range",
+      "age range",
       "location"
     ],
     "biosample": {
       "biosample_variables": [],
-      "sample_types": []
+      "sample_types": [
+        "stool"
+      ]
     },
     "available_data_types": {
       "genomic_data": true,
@@ -2119,11 +2238,13 @@
     ],
     "current_enrollment": 118548,
     "basic_cohort_attributes": [
-      "genders_studied_in_cohort"
+      "genders studied in cohort"
     ],
     "biosample": {
       "biosample_variables": [],
-      "sample_types": []
+      "sample_types": [
+        "blood"
+      ]
     },
     "available_data_types": {
       "genomic_data": true,
@@ -2154,7 +2275,9 @@
     ],
     "biosample": {
       "biosample_variables": [],
-      "sample_types": []
+      "sample_types": [
+        "saliva"
+      ]
     },
     "available_data_types": {
       "genomic_data": true,
@@ -2165,7 +2288,7 @@
     "laboratory_measures": {
       "genomic_variables": [],
       "microbiology": [
-        "microbial_data"
+        "microbial data"
       ]
     },
     "pi_lead": "Stephanie Devaney",
@@ -2192,7 +2315,9 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "urine"
+        "urine",
+        "stool",
+        "blood"
       ]
     },
     "available_data_types": {
@@ -2208,7 +2333,7 @@
     "pi_lead": "Rory Collins",
     "questionnaire_survey_data": {
       "socio_demographic_and_economic_characteristics": [
-        "family_and_household_structure"
+        "family and household structure"
       ],
       "lifestyle_and_behaviours": [],
       "physiological_measurements": [
@@ -2224,11 +2349,13 @@
     ],
     "current_enrollment": 100000,
     "basic_cohort_attributes": [
-      "study_design"
+      "study design"
     ],
     "biosample": {
       "biosample_variables": [],
-      "sample_types": []
+      "sample_types": [
+        "stool"
+      ]
     },
     "available_data_types": {
       "genomic_data": true,
@@ -2247,7 +2374,7 @@
       ],
       "lifestyle_and_behaviours": [],
       "physiological_measurements": [
-        "blood_pressure"
+        "blood pressure"
       ]
     },
     "website": "http://www.intervalstudy.org.uk/"
@@ -2261,13 +2388,14 @@
     ],
     "current_enrollment": 202638,
     "basic_cohort_attributes": [
-      "sexes_studied_in_cohort",
+      "sexes studied in cohort",
       "timeline"
     ],
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "urine"
+        "urine",
+        "stool"
       ]
     },
     "available_data_types": {
@@ -2283,7 +2411,7 @@
     "pi_lead": "Usha Menon",
     "questionnaire_survey_data": {
       "socio_demographic_and_economic_characteristics": [
-        "family_and_household_structure"
+        "family and household structure"
       ],
       "lifestyle_and_behaviours": [
         "nutrition"
@@ -2301,11 +2429,14 @@
     ],
     "current_enrollment": 180000,
     "basic_cohort_attributes": [
-      "num_participants"
+      "num participants"
     ],
     "biosample": {
       "biosample_variables": [],
-      "sample_types": []
+      "sample_types": [
+        "stool",
+        "blood"
+      ]
     },
     "available_data_types": {
       "genomic_data": false,
@@ -2336,12 +2467,14 @@
     ],
     "current_enrollment": 161808,
     "basic_cohort_attributes": [
-      "age_range",
+      "age range",
       "timeline"
     ],
     "biosample": {
       "biosample_variables": [],
-      "sample_types": []
+      "sample_types": [
+        "stool"
+      ]
     },
     "available_data_types": {
       "genomic_data": true,
