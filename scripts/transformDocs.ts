@@ -101,16 +101,20 @@ const toEsDocument = (allData: Raw[]) => {
       const output = {
         cohort_name: raw.cohort_name,
         countries:
-          raw.countries
-            ?.map(
-              (country) =>
-                (({
-                  "Republic of Korea": "South Korea",
-                  "South Korea": "South Korea",
-                  Korea: "South Korea",
-                } as { [k: string]: string })[country] || country)
-            )
-            .filter((country) => String(country) !== "0") || [],
+          raw.countries?.map((country) => {
+            if (country === "") {
+              if (raw.cohort_name === "NICCC") {
+                return "USA";
+              }
+            }
+            return (
+              ({
+                "Republic of Korea": "South Korea",
+                "South Korea": "South Korea",
+                Korea: "South Korea",
+              } as { [k: string]: string })[country] || country
+            );
+          }) || [],
         current_enrollment: raw.current_enrollment || 0,
         basic_cohort_attributes: Object.values(
           raw.basic_cohort_attributes || {}
