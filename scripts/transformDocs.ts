@@ -77,7 +77,7 @@ const toEsDocument = (allData: Raw[]) => {
   ];
   return (raw: Raw, i: number): MappingShape => {
     const toSpaceCase = (str: string) => str.split("_").join(" ");
-    const additionalBiosampleTypeCounts = Math.floor(Math.random() * 3) + 1;
+    const additionalBiosampleTypeCounts = Math.floor(Math.random() * 2) + 1;
     const randomAdditionalSamples = _.range(
       0,
       additionalBiosampleTypeCounts
