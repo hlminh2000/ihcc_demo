@@ -35,7 +35,7 @@
         "blood pressure"
       ]
     },
-    "website": "https://dceg2.cancer.gov/gemshare/"
+    "website": "https://dceg2.cancer.gov/gemshare/studies/GCS/"
   },
   {
     "cohort_name": "Korean Genome and Epidemiology Study (KoGES)",
@@ -52,7 +52,8 @@
       "biosample_variables": [],
       "sample_types": [
         "urine",
-        "saliva"
+        "saliva",
+        "blood"
       ]
     },
     "available_data_types": {
@@ -76,7 +77,7 @@
         "heart rate"
       ]
     },
-    "website": "http://www.nih.go.kr/NIH/eng/contents/NihEngContentView.jsp?cid=65199&menuIds=HOME004-MNU2261-MNU2262-MNU2263-MNU2264"
+    "website": "http://www.cdc.go.kr/contents.es?mid=a50401010100"
   },
   {
     "cohort_name": "Genomics England / 100,000 Genomes Project",
@@ -88,7 +89,7 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "saliva"
+        "stool"
       ]
     },
     "available_data_types": {
@@ -123,8 +124,7 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "blood",
-        "stool"
+        "saliva"
       ]
     },
     "available_data_types": {
@@ -158,7 +158,6 @@
       "biosample_variables": [],
       "sample_types": [
         "urine",
-        "blood",
         "stool"
       ]
     },
@@ -195,7 +194,6 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "urine",
         "blood"
       ]
     },
@@ -229,7 +227,6 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "saliva",
         "stool"
       ]
     },
@@ -267,7 +264,6 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "blood",
         "stool"
       ]
     },
@@ -303,7 +299,7 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "urine"
+        "blood"
       ]
     },
     "available_data_types": {
@@ -381,8 +377,8 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "saliva",
-        "blood"
+        "blood",
+        "urine"
       ]
     },
     "available_data_types": {
@@ -417,6 +413,7 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
+        "stool",
         "blood"
       ]
     },
@@ -453,7 +450,7 @@
       "biosample_variables": [],
       "sample_types": [
         "stool",
-        "saliva"
+        "blood"
       ]
     },
     "available_data_types": {
@@ -496,8 +493,7 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "stool",
-        "urine"
+        "stool"
       ]
     },
     "available_data_types": {
@@ -535,7 +531,7 @@
       "biosample_variables": [],
       "sample_types": [
         "stool",
-        "saliva"
+        "blood"
       ]
     },
     "available_data_types": {
@@ -571,7 +567,8 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "saliva"
+        "stool",
+        "urine"
       ]
     },
     "available_data_types": {
@@ -649,7 +646,8 @@
       "biosample_variables": [],
       "sample_types": [
         "saliva",
-        "stool"
+        "stool",
+        "blood"
       ]
     },
     "available_data_types": {
@@ -682,7 +680,7 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "urine"
+        "blood"
       ]
     },
     "available_data_types": {
@@ -719,7 +717,8 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "stool"
+        "stool",
+        "blood"
       ]
     },
     "available_data_types": {
@@ -755,7 +754,7 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "urine"
+        "blood"
       ]
     },
     "available_data_types": {
@@ -797,7 +796,8 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "blood"
+        "blood",
+        "urine"
       ]
     },
     "available_data_types": {
@@ -835,7 +835,7 @@
       "biosample_variables": [],
       "sample_types": [
         "urine",
-        "saliva"
+        "blood"
       ]
     },
     "available_data_types": {
@@ -875,7 +875,8 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "stool"
+        "stool",
+        "blood"
       ]
     },
     "available_data_types": {
@@ -906,7 +907,8 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "saliva"
+        "blood",
+        "stool"
       ]
     },
     "available_data_types": {
@@ -951,7 +953,8 @@
       "biosample_variables": [],
       "sample_types": [
         "saliva",
-        "stool"
+        "stool",
+        "urine"
       ]
     },
     "available_data_types": {
@@ -1021,8 +1024,8 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "blood",
-        "stool"
+        "urine",
+        "saliva"
       ]
     },
     "available_data_types": {
@@ -1059,6 +1062,7 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
+        "urine",
         "blood"
       ]
     },
@@ -1094,8 +1098,7 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "saliva",
-        "stool"
+        "urine"
       ]
     },
     "available_data_types": {
@@ -1129,7 +1132,7 @@
       "biosample_variables": [],
       "sample_types": [
         "saliva",
-        "stool"
+        "urine"
       ]
     },
     "available_data_types": {
@@ -1169,7 +1172,9 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "blood"
+        "blood",
+        "urine",
+        "stool"
       ]
     },
     "available_data_types": {
@@ -1207,7 +1212,8 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "blood"
+        "blood",
+        "stool"
       ]
     },
     "available_data_types": {
@@ -1244,7 +1250,8 @@
       "biosample_variables": [],
       "sample_types": [
         "urine",
-        "saliva"
+        "stool",
+        "blood"
       ]
     },
     "available_data_types": {
@@ -1281,8 +1288,7 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "saliva",
-        "stool"
+        "saliva"
       ]
     },
     "available_data_types": {
@@ -1319,8 +1325,7 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "stool",
-        "urine"
+        "stool"
       ]
     },
     "available_data_types": {
@@ -1355,7 +1360,7 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "stool"
+        "urine"
       ]
     },
     "available_data_types": {
@@ -1391,8 +1396,8 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "saliva",
-        "urine"
+        "stool",
+        "saliva"
       ]
     },
     "available_data_types": {
@@ -1430,8 +1435,8 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "stool",
-        "urine"
+        "urine",
+        "saliva"
       ]
     },
     "available_data_types": {
@@ -1470,7 +1475,7 @@
       "biosample_variables": [],
       "sample_types": [
         "urine",
-        "saliva",
+        "blood",
         "stool"
       ]
     },
@@ -1544,7 +1549,8 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "urine"
+        "urine",
+        "stool"
       ]
     },
     "available_data_types": {
@@ -1586,8 +1592,7 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "stool",
-        "urine"
+        "stool"
       ]
     },
     "available_data_types": {
@@ -1660,7 +1665,8 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "stool"
+        "blood",
+        "urine"
       ]
     },
     "available_data_types": {
@@ -1695,7 +1701,7 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "blood"
+        "saliva"
       ]
     },
     "available_data_types": {
@@ -1771,7 +1777,7 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "blood"
+        "stool"
       ]
     },
     "available_data_types": {
@@ -1808,7 +1814,8 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "blood"
+        "blood",
+        "stool"
       ]
     },
     "available_data_types": {
@@ -1849,7 +1856,7 @@
       "biosample_variables": [],
       "sample_types": [
         "saliva",
-        "blood"
+        "stool"
       ]
     },
     "available_data_types": {
@@ -1889,7 +1896,7 @@
       "biosample_variables": [],
       "sample_types": [
         "urine",
-        "blood"
+        "stool"
       ]
     },
     "available_data_types": {
@@ -1928,7 +1935,7 @@
       "biosample_variables": [],
       "sample_types": [
         "stool",
-        "urine"
+        "blood"
       ]
     },
     "available_data_types": {
@@ -1961,7 +1968,7 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "blood"
+        "stool"
       ]
     },
     "available_data_types": {
@@ -2001,6 +2008,7 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
+        "blood",
         "stool"
       ]
     },
@@ -2038,6 +2046,7 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
+        "urine",
         "stool"
       ]
     },
@@ -2075,7 +2084,8 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "urine"
+        "urine",
+        "stool"
       ]
     },
     "available_data_types": {
@@ -2113,8 +2123,8 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "blood",
-        "urine"
+        "stool",
+        "blood"
       ]
     },
     "available_data_types": {
@@ -2187,7 +2197,7 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "blood"
+        "stool"
       ]
     },
     "available_data_types": {
@@ -2224,7 +2234,7 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "blood"
+        "stool"
       ]
     },
     "available_data_types": {
@@ -2257,7 +2267,6 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "saliva",
         "stool"
       ]
     },
@@ -2297,7 +2306,8 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "urine"
+        "urine",
+        "blood"
       ]
     },
     "available_data_types": {
@@ -2334,7 +2344,6 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "saliva",
         "stool"
       ]
     },
@@ -2415,7 +2424,8 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "stool"
+        "blood",
+        "urine"
       ]
     },
     "available_data_types": {
@@ -2453,8 +2463,7 @@
     "biosample": {
       "biosample_variables": [],
       "sample_types": [
-        "stool",
-        "saliva"
+        "blood"
       ]
     },
     "available_data_types": {

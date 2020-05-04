@@ -159,7 +159,13 @@ const toEsDocument = (allData: Raw[]) => {
               ?.circulation_and_respiration || []),
           ].map(toSpaceCase),
         },
-        website: raw.website,
+        website:
+          ({
+            "Korean Genome and Epidemiology Study (KoGES)":
+              "http://www.cdc.go.kr/contents.es?mid=a50401010100",
+            "Golestan Cohort Study":
+              "https://dceg2.cancer.gov/gemshare/studies/GCS/",
+          } as { [k: string]: string })[raw.cohort_name || ""] || raw.website,
       };
       console.log("output: ", output);
       return output;
