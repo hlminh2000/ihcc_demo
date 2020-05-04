@@ -499,12 +499,7 @@ const PageContent = (props: { sqon: SQON | null }) => {
           )}
           <Charts sqon={props.sqon}></Charts>
           <div className={tableContainer}>
-            <Table
-              {...props}
-              customColumns={customTableColumns}
-              alwaysSorted={[{ field: "cohort_name", order: "asc" }]}
-              defaultSorted={[{ field: "cohort_name", order: "asc" }]}
-            />
+            <Table {...props} customColumns={customTableColumns} />
           </div>
         </div>
         <div className={`${footerStyle} ${bodyFooter}`}>
