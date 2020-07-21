@@ -1,6 +1,6 @@
 import { Client } from "@elastic/elasticsearch";
-const mapping = require("../api/assets/cohort_centric.json");
-const cohorts = require("../api/assets/transformed_data.json");
+import mapping from "./assets/cohort_centric.json";
+import cohorts from "./assets/transformed_data.json";
 
 const INDEX = "demo_index";
 
