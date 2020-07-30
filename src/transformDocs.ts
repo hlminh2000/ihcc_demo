@@ -1,5 +1,5 @@
-import fs from "fs";
 import _ from "lodash";
+import raw from "./assets/raw_data.json";
 
 type MappingShape = {
   cohort_autocomplete?: string;
@@ -177,7 +177,7 @@ const toEsDocument = (allData: Raw[]) => {
 };
 
 export default () => {
-  const raw: Raw[] = require("../api/assets/raw_data.json");
-  const output = raw.map(toEsDocument(raw));
+  // @ts-ignore it's ok we want to model the type explicitly
+  const output = raw.map(toEsDocument(raw as Raw));
   return output;
 };

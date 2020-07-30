@@ -1,5 +1,5 @@
 import { Client } from "@elastic/elasticsearch";
-import mapping from "./assets/cohort_centric.json";
+import indexSetting from "./assets/cohort_centric.json";
 import transformDocs from "transformDocs";
 import { ES_INDEX } from "config";
 
@@ -7,7 +7,7 @@ export const initIndexMapping = async (index: string, esClient: Client) => {
   const serializedIndexName = index.toLowerCase();
   await esClient.indices.putMapping({
     index: serializedIndexName,
-    body: mapping.mappings,
+    body: indexSetting,
   });
 };
 
@@ -24,15 +24,24 @@ export default async (esClient: Client) => {
     .delete({
       index: ES_INDEX,
     })
-    .catch((err) => console.log("index already exists"))
+    .catch((err) => {
+      console.log(
+        `tried to delete index ${ES_INDEX}, but it doesn't exist yet?`
+      );
+      console.error(err);
+    })
     .then(sleep);
   await esClient.indices
     .create({
       index: ES_INDEX,
-      body: mapping,
+      body: indexSetting,
     })
-    .catch((err) => console.log("create"))
+    .catch((err) => {
+      console.log(`could not create index ${ES_INDEX}`);
+      console.error(err);
+    })
     .then(sleep);
+  console.log(`index ${ES_INDEX} is up to date`);
   await Promise.all(
     cohorts.map((cohort: object, i: number) => {
       try {
